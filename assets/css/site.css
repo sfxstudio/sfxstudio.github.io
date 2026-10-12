@@ -508,7 +508,7 @@ body.menu-open{overflow:hidden}
 /* ---------- Text setting ----------
    Reading paragraphs are justified with Russian hyphenation so lines end flush
    without gaps; short words are tied to the next one at build time (nbsp). */
-.prose p,.chapter p,.statement__text p,.hero__copy p,.page-hero .lead,.contact__note,.cta-band p,.statement__grid .lead,.aside-box p,.footer__brand p,.fx-list li,.spec td,.muted.measure{text-align:justify;text-align-last:left;text-wrap:pretty}
+.prose p,.chapter p,.statement__text p,.hero__copy p,.page-hero .lead,.contact__note,.cta-band p,.statement__grid .lead,.aside-box p,.footer__brand p,.fx-list li,.spec td,.muted.measure{text-align:left;text-wrap:pretty}
 h1,h2,h3,.statement__title,.chapter__name,.wcard__title,.acard h3,.h2,.h3{text-wrap:balance}
 
 /* Reveal (JS adds .reveal-ready to <html>) */
