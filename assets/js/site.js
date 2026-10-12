@@ -399,6 +399,13 @@
         // Depth: the shot drifts slower than the page as it leaves
         gsap.to($('.hero__media', hero), { yPercent: 14, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true } });
       }
+      // Atmospheric backgrounds drift a little slower than the page (background layer only)
+      if (c.motion) {
+        $$('.atmo').forEach(function (sec) {
+          var bg = sec.querySelector('.atmo__bg');
+          if (bg) gsap.fromTo(bg, { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true } });
+        });
+      }
       // Chapters drive the sticky stage
       if (c.desktop && stage) {
         chapters.forEach(function (ch) {

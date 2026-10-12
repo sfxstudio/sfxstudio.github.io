@@ -456,6 +456,50 @@ body.menu-open{overflow:hidden}
 .dlg__body{aspect-ratio:16/9;background:#000}
 .dlg__body video,.dlg__body iframe{width:100%;height:100%;border:0}
 
+/* ---------- Atmospheric section backgrounds («О студии») ----------
+   Layers: section ground → blurred photo (.atmo__bg) → veil (::after) → content.
+   Photos are pre-blurred (tools/atmo.py); only the photo layer is filtered. */
+.atmo{position:relative;isolation:isolate;overflow:hidden;--ground:var(--carbon)}
+.atmo.light{--ground:var(--fog)}
+.atmo.raised{--ground:var(--graphite)}
+.atmo__bg{position:absolute;inset:-8% 0;z-index:-1;pointer-events:none;background-color:var(--ground);background-image:var(--atmo-img-m);background-size:cover;background-repeat:no-repeat;background-position:var(--atmo-pos-m,center);filter:saturate(var(--atmo-sat,.85));transform:scale(1.04);will-change:transform}
+.atmo__bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,var(--ground) 0%,transparent 20%,transparent 80%,var(--ground) 100%),
+  var(--atmo-veil-m)}
+@media (min-width:1000px){
+  .atmo__bg{background-image:var(--atmo-img);background-position:var(--atmo-pos,center)}
+  .atmo__bg::after{background:
+    linear-gradient(180deg,var(--ground) 0%,transparent 18%,transparent 82%,var(--ground) 100%),
+    var(--atmo-veil)}
+}
+.atmo > .wrap{position:relative}
+
+/* 01 Зима — light, cold, almost monochrome; the rig stays left, the sun goes under the veil */
+.atmo--winter{
+  --atmo-img:url(../img/atmo/winter-1600.webp);--atmo-img-m:url(../img/atmo/winter-800.webp);
+  --atmo-pos:left 55%;--atmo-pos-m:18% center;--atmo-sat:.45;
+  --atmo-veil:radial-gradient(ellipse 22% 24% at 9% 22%,rgba(232,229,222,.86),rgba(232,229,222,0) 100%),linear-gradient(90deg,rgba(232,229,222,.3) 0%,rgba(232,229,222,.6) 30%,rgba(232,229,222,.84) 45%,rgba(232,229,222,.8) 100%);
+  --atmo-veil-m:linear-gradient(rgba(232,229,222,.84),rgba(232,229,222,.84))}
+/* 02 Вода, дым, ветер — rainy night, the lamp and steam stay left, text sits on dark rain */
+.atmo--water{
+  --atmo-img:url(../img/atmo/water-1600.webp);--atmo-img-m:url(../img/atmo/water-800.webp);
+  --atmo-pos:center 45%;--atmo-pos-m:15% center;--atmo-sat:.7;
+  --atmo-veil:linear-gradient(90deg,rgba(11,12,13,.3) 0%,rgba(11,12,13,.55) 32%,rgba(11,12,13,.74) 48%,rgba(11,12,13,.7) 100%);
+  --atmo-veil-m:linear-gradient(rgba(11,12,13,.72),rgba(11,12,13,.72))}
+/* 03 Пиротехника — warm glow kept at the right edge and floor, dimmed hard behind the text */
+.atmo--pyro{
+  --atmo-img:url(../img/atmo/pyro-1600.webp);--atmo-img-m:url(../img/atmo/pyro-800.webp);
+  --atmo-pos:center 62%;--atmo-pos-m:82% center;--atmo-sat:.8;
+  --atmo-veil:radial-gradient(ellipse 46% 50% at 58% 50%,rgba(20,22,24,.86) 0%,rgba(20,22,24,.66) 55%,rgba(20,22,24,.18) 100%),linear-gradient(90deg,rgba(20,22,24,.45),rgba(20,22,24,0) 75%);
+  --atmo-veil-m:linear-gradient(rgba(20,22,24,.78),rgba(20,22,24,.78))}
+/* 04 Особые эффекты — cold blue-white burst on the right, text over the dimmed core */
+.atmo--special{
+  --atmo-img:url(../img/atmo/special-1600.webp);--atmo-img-m:url(../img/atmo/special-800.webp);
+  --atmo-pos:center 50%;--atmo-pos-m:72% center;--atmo-sat:.8;
+  --atmo-veil:radial-gradient(ellipse 46% 52% at 58% 50%,rgba(11,12,13,.86) 0%,rgba(11,12,13,.66) 55%,rgba(11,12,13,.16) 100%),linear-gradient(90deg,rgba(11,12,13,.45),rgba(11,12,13,0) 75%);
+  --atmo-veil-m:linear-gradient(rgba(11,12,13,.76),rgba(11,12,13,.76))}
+@media (prefers-reduced-motion:reduce){.atmo__bg{transform:scale(1.04)!important}}
+
 /* Reveal (JS adds .reveal-ready to <html>) */
 .reveal-ready [data-reveal]{opacity:0;transform:translateY(24px)}
 .reveal-ready [data-reveal].is-in{opacity:1;transform:none;transition:opacity var(--d-slow) var(--ease-out),transform var(--d-slow) var(--ease-out)}
