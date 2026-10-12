@@ -21,7 +21,7 @@ OUT = Path("legacy")
 RAW = OUT / "raw"
 S = requests.Session()
 S.headers["User-Agent"] = "Mozilla/5.0 (sfxstudio site migration)"
-REPORT = {"downloaded": [], "failed": [], "split": []}
+REPORT = {"downloaded": [], "failed": [], "split": []}  # v2: unicode-safe URLs
 
 
 def get(url, **kw):
@@ -69,7 +69,7 @@ IFRAME_RE = re.compile(r"<iframe[^>]+src=[\"']([^\"']+)", re.I)
 
 def download(url, dest):
     dest.parent.mkdir(parents=True, exist_ok=True)
-    if dest.exists():
+    if dest.exists() or Path(str(dest) + ".part00").exists():
         return True
     r = get(url, stream=True)
     if r is None or r.status_code != 200:
@@ -106,7 +106,7 @@ def main():
 
     # Collect upload URLs
     urls = set()
-    blobs = [json.dumps(posts), json.dumps(pages), json.dumps(media)]
+    blobs = [json.dumps(x, ensure_ascii=False) for x in (posts, pages, media)]
     blobs += [p.read_text() for p in html_dir.glob("*.html")]
     for blob in blobs:
         for u in UPLOAD_RE.findall(blob.replace("\\/", "/")):
