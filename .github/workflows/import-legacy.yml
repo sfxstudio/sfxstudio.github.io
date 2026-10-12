@@ -1,0 +1,34 @@
+name: Import legacy content
+
+# Pulls texts, photos and videos of the legacy WordPress site (sfxstudio.ru)
+# into the `legacy-import` branch. Used once for the site migration;
+# the branch is a transport and is not deployed.
+on:
+  workflow_dispatch:
+  push:
+    branches: [legacy-import]
+    paths: ['tools/import_legacy.py', '.github/workflows/import-legacy.yml']
+
+permissions:
+  contents: write
+
+concurrency: import-legacy
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: python tools/import_legacy.py
+      - name: Commit legacy dump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git add legacy
+          git commit -m "Import legacy sfxstudio.ru content" || echo "nothing to commit"
+          git push
