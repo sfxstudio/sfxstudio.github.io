@@ -235,12 +235,68 @@ env.globals["VERSION"] = hashlib.sha1(b"".join((ROOT / p).read_bytes() for p in 
     "assets/css/site.css", "assets/js/site.js") if (ROOT / p).exists())).hexdigest()[:8]
 
 
+SHORT = re.compile(r"(?<![\w\-])([А-Яа-яЁёA-Za-z]{1,2}|[0-9]{1,3})\s+(?=[\w«(\"№0-9])", re.U)
+DASH = re.compile(r"\s+(—|–)\s")
+SKIP = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)", re.S | re.I)
+
+
+_ALL = "[а-яё]"
+_V = "[аеёиоуыэюя]"
+_C = "[бвгджзклмнпрстфхцчшщ]"
+_X = "[йъь]"
+HYPH = [re.compile(p, re.I) for p in (
+    f"({_X})({_ALL}{_ALL})", f"({_V})({_V}{_ALL})", f"({_V}{_C})({_C}{_V})",
+    f"({_C}{_V})({_C}{_V})", f"({_V}{_C})({_C}{_C}{_V})", f"({_V}{_C}{_C})({_C}{_C}{_V})")]
+WORD = re.compile(r"[А-Яа-яЁё]{5,}")
+
+
+def hyphenate_word(w):
+    """Soft hyphens by Russian syllable rules (Khmelev); never leaves <2 letters on a line."""
+    for _ in range(2):
+        for rx in HYPH:
+            w = rx.sub("\\1\u00ad\\2", w)
+    parts = w.split("\u00ad")
+    if len(parts) > 1:  # glue too-short head/tail pieces back
+        if len(parts[0]) < 2:
+            parts[0:2] = [parts[0] + parts[1]]
+        if len(parts) > 1 and len(parts[-1]) < 2:
+            parts[-2:] = [parts[-2] + parts[-1]]
+    return "\u00ad".join(parts)
+
+
+P_BLOCK = re.compile(r"(<p\b[^>]*>)(.*?)(</p>)", re.S)
+
+
+def hyphenate_paragraphs(html_text):
+    def fix(m):
+        inner = SKIP.split(m.group(2))
+        for i in range(0, len(inner), 2):
+            inner[i] = WORD.sub(lambda w: hyphenate_word(w.group(0)), inner[i])
+        return m.group(1) + "".join(inner) + m.group(3)
+    return P_BLOCK.sub(fix, html_text)
+
+
+def typograph(html_text):
+    """Tie prepositions/short words to the next word and dashes to the previous one,
+    only in visible text (tags, attributes and scripts are left untouched)."""
+    parts = SKIP.split(html_text)
+    for i in range(0, len(parts), 2):
+        t = parts[i]
+        if not t.strip():
+            continue
+        t = DASH.sub("\u00a0\\1 ", t)
+        t = SHORT.sub("\\1\u00a0", t)
+        t = SHORT.sub("\\1\u00a0", t)  # chains like «и в»
+        parts[i] = t
+    return hyphenate_paragraphs("".join(parts))
+
+
 def write(path, template, **ctx):
     out = ROOT / path
     out.parent.mkdir(parents=True, exist_ok=True)
     self_url = "/" + path[: -len("index.html")] if path.endswith("index.html") else "/" + path
     ctx.setdefault("self_url", self_url)
-    out.write_text(env.get_template(template).render(**ctx))
+    out.write_text(typograph(env.get_template(template).render(**ctx)))
     return path
 
 

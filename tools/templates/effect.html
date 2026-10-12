@@ -20,7 +20,7 @@
   <div class="wrap statement__grid">
     <div><span class="cue"><b>{{ fx.num }}</b> · Что делаем</span></div>
     <div>
-      <p class="lead" style="max-width:40ch">{{ fx.text }}</p>
+      <p class="lead lead--wide">{{ fx.text }}</p>
       <ul class="fx-list" style="margin-top:3rem">
         {% for x in fx.list %}<li data-n="{{ '%02d' % loop.index }}">{{ x }}</li>{% endfor %}
       </ul>
