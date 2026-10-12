@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "_macros.html" import picture, runs, cta %}
+{% block main %}
+<article>
+  <section class="page-hero">
+    <div class="wrap">
+      <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/news/">Новости</a></li><li><time datetime="{{ item.date }}">{{ ru_date(item.date) }}</time></li></ol>
+      <h1 class="is-long">{{ item.title }}</h1>
+    </div>
+  </section>
+  <section class="section" style="padding-top:clamp(2rem,4vw,4rem)">
+    <div class="wrap article">
+      <div>
+        {% if img(item) %}<div class="player" style="aspect-ratio:auto">{{ picture(item, "(min-width: 1000px) 66vw, 100vw", eager=True) }}</div>{% endif %}
+        <div class="prose" style="margin-top:2.5rem">
+          {% for p in item.body %}<p>{{ runs(p) }}</p>{% endfor %}
+        </div>
+      </div>
+      <aside class="aside-box">
+        {% if target %}
+        <p class="cue no-rule">Работа студии</p>
+        <a href="{{ url(target) }}" class="acard">
+          <div class="acard__img"><img src="{{ img(target, 960) }}" alt="" width="640" height="360" loading="lazy"></div>
+          <h3>{{ target.project }}{% if target.subtitle %}<small>{{ target.subtitle }}</small>{% endif %}</h3>
+          {% if target.effects %}<p>{{ target.effects }}</p>{% endif %}
+        </a>
+        {% endif %}
+        {% if item.tags %}<div class="chips">{% for t in item.tags %}<a href="/works/?tag={{ t.slug }}">{{ t.name }}</a>{% endfor %}</div>{% endif %}
+        <a class="link-arrow" href="/news/">Все новости <span>→</span></a>
+      </aside>
+    </div>
+  </section>
+</article>
+{{ cta() }}
+{% endblock %}

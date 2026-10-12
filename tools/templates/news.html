@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta %}
+{% block main %}
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li>Новости</li></ol>
+    <h1>Новости</h1>
+    <p class="lead">Премьеры, трейлеры и релизы проектов, в которых работала студия.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:clamp(2rem,4vw,4rem)">
+  <div class="wrap">
+    <ul class="news-list" data-archive data-paged data-page-size="30">
+      {% for n in news %}
+      <li class="acard-li"><a href="{{ url(n) }}"><time datetime="{{ n.date }}">{{ ru_date(n.date) }}</time><strong>{{ n.title }}</strong>{% if img(n) %}<img src="{{ img(n, 480) }}" width="192" height="108" alt="" loading="lazy">{% else %}<span></span>{% endif %}</a></li>
+      {% endfor %}
+    </ul>
+    <div class="more-wrap" data-more-wrap hidden><button class="btn" type="button" data-more>Показать ещё</button></div>
+  </div>
+</section>
+{{ cta() }}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from "_macros.html" import acard, cta %}
+{% block main %}
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li>Работы</li></ol>
+    <h1>Работы</h1>
+    <p class="lead">{{ N_WORKS }} {{ plural(N_WORKS, 'проект', 'проекта', 'проектов') }} со спецэффектами студии — фильмы, сериалы, реклама, клипы. Самые свежие — первыми.</p>
+  </div>
+</section>
+<div class="filters" data-filters>
+  <div class="wrap">
+    <div class="filter-group" role="group" aria-label="Фильтр по эффекту и разделу">
+      <button class="fbtn" type="button" data-filter="" aria-pressed="true">Все<sup>{{ N_WORKS }}</sup></button>
+      {% for e in EFFECTS %}<button class="fbtn" type="button" data-filter="{{ e.key }}" aria-pressed="false">{{ e.name }}<sup>{{ effect_count(e.key) }}</sup></button>{% endfor %}
+      <button class="fbtn" type="button" data-filter="decor" aria-pressed="false">Декорирование<sup>{{ effect_count('decor') }}</sup></button>
+      {% for k, v in SECTIONS.items() %}<button class="fbtn" type="button" data-filter="{{ k }}" aria-pressed="false">{{ v }}<sup>{{ effect_count(k) }}</sup></button>{% endfor %}
+    </div>
+    <label class="search"><span class="sr-only">Поиск по работам</span><input type="search" placeholder="Поиск: проект, эффект, бренд" data-search autocomplete="off"></label>
+    <span class="result-count" data-count aria-live="polite">{{ N_WORKS }} {{ plural(N_WORKS, 'работа', 'работы', 'работ') }}</span>
+  </div>
+  <div class="wrap" data-tag-row hidden style="padding-bottom:.9rem">
+    <span class="chips"><span data-tag-label></span><a href="/works/" data-tag-clear>Сбросить метку ✕</a></span>
+  </div>
+</div>
+<section class="section" style="padding-top:clamp(2rem,4vw,3.5rem)">
+  <div class="wrap">
+    <div class="archive" data-archive>
+      {% for w in works %}{{ acard(w) }}{% endfor %}
+    </div>
+    <div class="empty" data-empty hidden>
+      <p class="h3">Ничего не нашлось</p>
+      <p class="muted" style="margin-top:1rem">Попробуйте другой запрос или <a href="/works/">покажите все работы</a>.</p>
+    </div>
+    <div class="more-wrap" data-more-wrap hidden><button class="btn" type="button" data-more>Показать ещё</button></div>
+  </div>
+</section>
+<script type="application/json" data-tag-names>{{ tags | tojson }}</script>
+{{ cta() }}
+{% endblock %}

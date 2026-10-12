@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% from "_macros.html" import player, runs, acard, cta %}
+{% block head %}
+<script type="application/ld+json">{{ {"@context":"https://schema.org","@type":"CreativeWork","name":item.title,"datePublished":item.date,"description":description,"image":(SITE_URL ~ img(item,1440)) if img(item) else none,"creator":{"@type":"Organization","name":"SFX Studio"}} | tojson }}</script>
+{% endblock %}
+{% block main %}
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/works/">Работы</a></li>{% if item.cats %}<li><a href="{{ ('/effects/' ~ item.cats[0] ~ '/') if item.cats[0] in ('snow','rain','wind','smoke','fire','special','decor') else ('/works/?cat=' ~ item.cats[0]) }}">{{ CAT_LABEL[item.cats[0]] }}</a></li>{% endif %}</ol>
+    <h1{% if item.project | length > 22 %} class="is-long"{% endif %}>{{ item.project }}</h1>
+    {% if item.subtitle %}<p class="lead">{{ item.subtitle }}</p>{% endif %}
+    <dl class="meta-row">
+      <div><dt>Опубликовано</dt><dd><time datetime="{{ item.date }}">{{ ru_date(item.date) }}</time></dd></div>
+      {% if item.cats %}<div><dt>Раздел</dt><dd>{{ item.cats | labels | join(', ') }}</dd></div>{% endif %}
+    </dl>
+  </div>
+</section>
+<section class="section" style="padding-top:clamp(2rem,4vw,4rem)">
+  <div class="wrap article">
+    <div>
+      {{ player(item) }}
+      <div class="prose" style="margin-top:2.5rem">
+        {% for p in item.body %}<p>{{ runs(p) }}</p>{% endfor %}
+      </div>
+    </div>
+    <aside class="aside-box" aria-label="Детали проекта">
+      {% if item.effects %}
+      <div>
+        <p class="cue no-rule">Спецэффекты</p>
+        <p class="h3" style="margin-top:.75rem;font-size:clamp(1.4rem,1.1rem + 1vw,2rem);line-height:1.05">{{ item.effects }}</p>
+      </div>
+      {% endif %}
+      {% if item.tags %}
+      <div>
+        <p class="cue no-rule" style="margin-bottom:.75rem">Метки</p>
+        <div class="chips">{% for t in item.tags %}<a href="/works/?tag={{ t.slug }}">{{ t.name }}</a>{% endfor %}</div>
+      </div>
+      {% endif %}
+      {% if mentions %}
+      <div>
+        <p class="cue no-rule" style="margin-bottom:.75rem">В новостях</p>
+        <ul>{% for n in mentions %}<li style="margin-bottom:.5rem"><a href="{{ url(n) }}">{{ n.title }}</a> <span class="mono muted">{{ n.date[:4] }}</span></li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+      <a class="btn btn--primary" href="/contacts/#form">Нужен похожий эффект</a>
+    </aside>
+  </div>
+</section>
+{% if related %}
+<section class="section raised" aria-labelledby="rel-title">
+  <div class="wrap">
+    <div class="section-head"><span class="cue"><b>EFX</b> · Похожие</span><h2 class="h2" id="rel-title">Ещё работы</h2></div>
+    <div class="archive">{% for w in related %}{{ acard(w) }}{% endfor %}</div>
+  </div>
+</section>
+{% endif %}
+<nav class="wrap" aria-label="Соседние работы" style="padding-block:var(--s-5)">
+  <div class="pager">
+    {% if prev_item %}<a href="{{ url(prev_item) }}"><span class="mono muted">← Новее</span><strong>{{ prev_item.title }}</strong></a>{% else %}<span></span>{% endif %}
+    {% if next_item %}<a href="{{ url(next_item) }}"><span class="mono muted">Старше →</span><strong>{{ next_item.title }}</strong></a>{% endif %}
+  </div>
+</nav>
+{{ cta() }}
+{% endblock %}

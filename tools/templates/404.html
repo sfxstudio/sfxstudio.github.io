@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block head %}
+<script>
+/* Old sfxstudio.ru addresses -> new structure */
+(function(){var m={{ redirects | tojson }};
+var p=decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g,'');
+var to=m[p]||m[p.replace(/\/page\/\d+$/,'')];
+if(!to&&/^category\//.test(p))to=m[p.split('/').slice(0,2).join('/')];
+if(to){document.documentElement.setAttribute('data-redirect','1');location.replace(to+location.hash);}})();
+</script>
+{% endblock %}
+{% block main %}
+<section class="page-hero" style="min-height:70vh;display:flex;align-items:center">
+  <div class="wrap">
+    <span class="cue"><b>404</b> · Кадр не найден</span>
+    <h1>Этот дубль не&nbsp;сняли</h1>
+    <p class="lead">Такой страницы нет. Возможно, адрес изменился после обновления сайта.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem">
+      <a class="btn btn--primary" href="/">На главную</a>
+      <a class="btn" href="/works/">Все работы</a>
+      <a class="btn" href="/contacts/">Контакты</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

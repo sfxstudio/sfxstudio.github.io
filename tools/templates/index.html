@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% from "_macros.html" import picture, play_icon, fx_line %}
+{% set dark_hero = True %}
+{% block head %}
+<link rel="preload" as="image" href="/assets/video/hero-poster.webp" fetchpriority="high">
+<script type="application/ld+json">{{ {"@context":"https://schema.org","@type":"Organization","name":"SFX Studio","alternateName":"SfxStudio.ru","url":SITE_URL ~ "/","logo":SITE_URL ~ "/assets/img/brand/icon-512.png","email":EMAIL,"telephone":"+79255435160","sameAs":[YOUTUBE]} | tojson }}</script>
+<script>if(/[?&]page_id=474\b/.test(location.search))location.replace('/katok/#snow-sale')</script>
+{% endblock %}
+{% block main %}
+<section class="hero" data-hero aria-label="Первый экран">
+  <div class="hero__media" aria-hidden="true">
+    <video data-hero-video muted playsinline loop preload="metadata" poster="/assets/video/hero-poster.webp" width="1280" height="720">
+      <source data-src-wide="/assets/video/hero-1280.mp4" data-src-narrow="/assets/video/hero-720.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap hero__inner">
+    <div class="hero__top">
+      <span class="cue"><b>SFX Studio</b> · практические спецэффекты</span>
+      <span class="mono muted" aria-hidden="true">Кино · Сериалы · Реклама · Клипы</span>
+    </div>
+    <div class="hero__body">
+      <nav aria-label="Стихии">
+        <ol class="elements" data-elements>
+          {% for e in EFFECTS[:5] %}
+          <li data-key="{{ e.key }}"{% if loop.first %} class="is-active"{% endif %}><a href="/effects/{{ e.key }}/">{{ e.short }}<sup>{{ e.num }}</sup></a></li>
+          {% endfor %}
+        </ol>
+      </nav>
+      <div class="hero__copy">
+        <h1>Профессиональные спецэффекты на съёмочной площадке</h1>
+        <p>Снег, дождь, ветер, дым и огонь — вживую, в кадре. Для кино, сериалов, рекламы и музыкальных клипов. Одновременно до семи площадок.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contact">Обсудить съёмку</a>
+          <button class="btn" type="button" data-open-video="/assets/video/showreel.mp4" data-video-title="Шоурил SFX Studio">{{ play_icon() }} Шоурил</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero__bar">
+      <span class="rec mono"><span data-hero-credit>В кадре: «{{ hero[0].credit if hero else 'Лёд 2' }}»</span></span>
+      <div class="reel-ticks" aria-hidden="true">{% for h in hero %}<i><b></b></i>{% endfor %}</div>
+      <button class="pause-btn mono" type="button" data-hero-pause aria-pressed="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z" fill="currentColor"/></svg><span>Пауза</span></button>
+    </div>
+  </div>
+  <script type="application/json" data-hero-map>{{ hero | tojson }}</script>
+</section>
+
+<section class="section light statement" aria-labelledby="studio-title">
+  <div class="wrap">
+    <div class="statement__grid">
+      <div><span class="cue"><b>01</b> · Студия</span></div>
+      <div>
+        <h2 class="statement__title" id="studio-title" data-reveal-mask>Снег в июле.<br>Ливень в&nbsp;ясный день.<br><em>Пожар — по&nbsp;команде «Мотор».</em></h2>
+        <div class="statement__text" data-reveal>
+          <p class="lead">Мы создаём погоду и стихии прямо на площадке — так, чтобы съёмка не зависела от сезона и прогноза.</p>
+          <p class="muted">У студии есть опыт и всё оборудование для зимнего окружения в павильоне и на натуре, для дождя, ветра, дыма и пиротехники. Бутафорское стекло, пух, пыль и пневмоэффекты — тоже наши. Работаем на фильмах, сериалах, рекламе и клипах.</p>
+        </div>
+        <div class="figures" data-reveal>
+          <div class="figure"><strong>7</strong><span>съёмочных площадок одновременно — столько обеспечивает наш штат</span></div>
+          <div class="figure"><strong>{{ N_WORKS }}</strong><span>{{ plural(N_WORKS, 'проект', 'проекта', 'проектов') }} в архиве студии на сайте</span></div>
+          <div class="figure"><strong>220<small>м²</small></strong><span>максимальная площадь катка с пластиковым льдом</span></div>
+          <div class="figure"><strong>{{ FIRST_YEAR }}</strong><span>год первой публикации в архиве работ</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="elements" aria-labelledby="elements-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="cue"><b>02</b> · Стихии</span>
+      <h2 class="h2" id="elements-title" data-reveal-mask>Что мы делаем в&nbsp;кадре</h2>
+    </div>
+    <div class="chapters" data-chapters>
+      <div>
+        {% for e in EFFECTS %}
+        <article class="chapter" data-chapter="{{ e.key }}" aria-labelledby="ch-{{ e.key }}">
+          <span class="cue"><b>EFX-{{ e.num }}</b> · {{ effect_count(e.key) }} {{ plural(effect_count(e.key), 'проект', 'проекта', 'проектов') }}</span>
+          <h3 class="chapter__name" id="ch-{{ e.key }}"><a href="/effects/{{ e.key }}/">{{ e.name }}</a></h3>
+          <figure class="chapter__media">
+            <video muted playsinline loop preload="none" poster="/assets/video/loops/{{ e.key }}.webp" data-lazy-video><source data-src="/assets/video/loops/{{ e.key }}.mp4" type="video/mp4"></video>
+            <figcaption>Кадр: {{ e.loop_credit }}</figcaption>
+          </figure>
+          <p>{{ e.text }}</p>
+          <ul class="chapter__list" aria-label="Эффекты">{% for x in e.list[:6] %}<li>{{ x }}</li>{% endfor %}</ul>
+          <div class="chapter__foot"><a class="link-arrow" href="/effects/{{ e.key }}/">Подробнее и работы <span>→</span></a></div>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="chapters__stage" aria-hidden="true">
+        <div class="stage" data-stage>
+          {% for e in EFFECTS %}
+          <figure data-stage-item="{{ e.key }}"{% if loop.first %} class="is-active"{% endif %}>
+            <video muted playsinline loop preload="none" poster="/assets/video/loops/{{ e.key }}.webp"><source data-src="/assets/video/loops/{{ e.key }}.mp4" type="video/mp4"></video>
+            <figcaption>Кадр: {{ e.loop_credit }}</figcaption>
+          </figure>
+          {% endfor %}
+          <div class="stage__label"><b data-stage-num>EFX-01</b><span data-stage-name>{{ EFFECTS[0].name }}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section raised" aria-labelledby="works-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="cue"><b>03</b> · Работы</span>
+      <div style="display:grid;gap:1.5rem">
+        <h2 class="h2" id="works-title" data-reveal-mask>Фильмы, сериалы, реклама, клипы</h2>
+        <a class="link-arrow" href="/works/" style="justify-self:start">Весь архив — {{ N_WORKS }} {{ plural(N_WORKS, 'работа', 'работы', 'работ') }} <span>→</span></a>
+      </div>
+    </div>
+    <div class="works-grid">
+      {% for cls, w in featured %}
+      <a class="wcard wcard--{{ cls }}" href="{{ url(w) }}" data-reveal>
+        <div class="wcard__img">
+          {{ picture(w, "(min-width: 800px) 60vw, 100vw") }}
+          {% if w.video %}<span class="wcard__play" aria-hidden="true">{{ play_icon() }}</span>{% endif %}
+        </div>
+        <div class="wcard__meta mono muted"><span>{{ w.date[:4] }}</span><span>{{ (w.cats | labels)[:1] | join('') }}</span></div>
+        <h3 class="wcard__title">{{ w.project }}{% if w.subtitle %}<small>{{ w.subtitle }}</small>{% endif %}</h3>
+        {% if w.effects %}<p class="wcard__fx">{{ w.effects }}</p>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="behind-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="cue"><b>04</b> · За кадром</span>
+      <h2 class="h2" id="behind-title" data-reveal-mask>Как это выглядит на площадке</h2>
+    </div>
+    <div class="behind">
+      <button class="reel" type="button" data-open-video="/assets/video/showreel.mp4" data-video-title="Шоурил SFX Studio" data-reveal>
+        <img src="/assets/video/showreel.webp" width="640" height="480" alt="" loading="lazy">
+        <span class="reel__label"><span class="reel__btn">{{ play_icon() }}</span><span><strong>Шоурил</strong><span>5 мин · со звуком</span></span></span>
+      </button>
+      <div data-reveal>
+        <p class="muted" style="max-width:36ch">Фильмы о съёмках, где видно, как эффект готовят к дублю.</p>
+        <ul class="bt-list" style="margin-top:1.5rem">
+          {% for w in backstage %}
+          <li><a href="{{ url(w) }}"><img src="{{ img(w, 480) }}" width="88" height="55" alt="" loading="lazy"><span><strong>{{ w.title }}</strong><span>{{ w.date[:4] }}</span></span></a></li>
+          {% endfor %}
+        </ul>
+        <a class="link-arrow" href="{{ YOUTUBE }}" target="_blank" rel="noopener" style="margin-top:1.5rem">YouTube-канал студии <span>↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section light" aria-labelledby="caps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="cue"><b>05</b> · Возможности</span>
+      <h2 class="h2" id="caps-title" data-reveal-mask>Оборудование, люди, масштаб</h2>
+    </div>
+    <div class="caps">
+      <div>
+        <table class="spec">
+          <caption class="cue no-rule">Что есть у студии</caption>
+          <tbody>
+            <tr><th scope="row">Дождь</th><td>Дождевые стойки и <strong>«Hollywood system»</strong> — полная иллюзия дождя</td></tr>
+            <tr><th scope="row">Дым</th><td>Дым-машины и <strong>генераторы тяжёлого дыма</strong> — атмосферные дымы нужной текстуры и плотности</td></tr>
+            <tr><th scope="row">Ветер</th><td><strong>Ветродуи</strong> разной мощности — от волос до непогоды</td></tr>
+            <tr><th scope="row">Зима</th><td><strong>Искусственный снег</strong>, иней и пластиковый лёд — в павильоне и на натуре</td></tr>
+            <tr><th scope="row">Пиротехника</th><td>Костры, факелы, взрывы и ревущее пламя, <strong>безопасные искры</strong></td></tr>
+            <tr><th scope="row">Стекло</th><td><strong>Бутафорское бьющееся стекло</strong> — бутылки и окна, безопасные для актёров</td></tr>
+            <tr><th scope="row">Пневматика</th><td>Пневмооборудование: пух, цветная пыль, пепел, выброс объектов</td></tr>
+            <tr><th scope="row">Шоу-эффекты</th><td>Генераторы <strong>мыльных пузырей</strong> и <strong>пены</strong>, пушки для <strong>конфетти</strong></td></tr>
+            <tr><th scope="row">Каток</th><td>Аренда катка с <strong>пластиковым льдом</strong> — до 220 м², размер настраивается · <a href="/katok/">подробнее</a></td></tr>
+            <tr><th scope="row">Команда</th><td>Штат обеспечивает эффекты <strong>одновременно на 7 площадках</strong></td></tr>
+          </tbody>
+        </table>
+        <ul class="formats" aria-label="Форматы работы">
+          <li>Кино и сериалы</li><li>Реклама</li><li>Музыкальные клипы и ТВ</li><li>Декорирование зданий и помещений</li><li>Витрины и фотосессии</li><li>Продажа искусственного снега</li>
+        </ul>
+      </div>
+      <div>
+        <p class="cue no-rule" style="margin-bottom:1rem">Эффекты в архиве работ · сколько раз</p>
+        <ul class="tagdex">
+          {% for slug, name, count in top_tags %}
+          <li><a href="/works/?tag={{ slug }}"><span>{{ name }}</span><span>{{ count }}</span></a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="cue"><b>06</b> · Связь</span>
+      <h2 class="h2" id="contact-title" data-reveal-mask>Расскажите о&nbsp;съёмке</h2>
+    </div>
+    <div class="contact">
+      <div>
+        <div class="contact__big">
+          <a href="{{ PHONE_HREF }}">{{ PHONE }}</a>
+          <a href="mailto:{{ EMAIL }}">{{ EMAIL }}</a>
+        </div>
+        <p class="contact__note">Чтобы быстрее оценить задачу, пригодятся сцены с эффектами, даты и место съёмки, референсы или раскадровка.</p>
+      </div>
+      {% include "_form.html" %}
+    </div>
+  </div>
+</section>
+{% endblock %}
