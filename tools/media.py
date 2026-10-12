@@ -29,7 +29,7 @@ HERO = [
     ("snow", "2023/03/lod-iskusstvennyy-sneg.mp4", 120.4, 3.4, "Лёд 2"),
     ("rain", "2023/10/Legenda-№17.mkv", 5.0, 3.4, "Легенда №17"),
     ("wind", "2024/02/dve-zhenshchiny-veter.mkv", 30.6, 3.4, "Две женщины"),
-    ("smoke", "2022/04/the_last_bogatyr_smoke.mp4", 5.0, 2.2, "Последний богатырь"),
+    ("smoke", "2022/04/the_last_bogatyr_smoke.mp4", 1.3, 3.4, "Последний богатырь"),
     ("fire", "2023/12/Чернобыль_огонь.mp4", 11.8, 3.6, "Чернобыль: Зона отчуждения"),
 ]
 LOOPS = {

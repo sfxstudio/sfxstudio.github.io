@@ -194,7 +194,7 @@ body.menu-open{overflow:hidden}
 /* ---------- Statement (fog chapter) ---------- */
 .statement__grid{display:grid;gap:var(--s-5)}
 @media (min-width:1000px){.statement__grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}}
-.statement__title{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2.7rem,1.2rem + 5.4vw,7.4rem);line-height:1;letter-spacing:-.01em}
+.statement__title{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2.2rem,1rem + 5.6vw,7.4rem);line-height:1;letter-spacing:-.01em}
 .statement__title em{font-style:normal;color:var(--ice-deep)}
 .statement__text{display:grid;gap:var(--s-3);margin-top:var(--s-5)}
 @media (min-width:760px){.statement__text{grid-template-columns:1fr 1fr;gap:var(--s-5)}}
@@ -215,7 +215,7 @@ body.menu-open{overflow:hidden}
 .chapter__name{font-family:var(--f-display);font-weight:800;text-transform:uppercase;overflow-wrap:normal;font-size:clamp(3rem,1.8rem + 4.2vw,6.6rem);line-height:1;letter-spacing:-.01em}
 .chapter__name a{text-decoration:none}
 .chapter__name a:hover{color:var(--ice)}
-.chapter p{max-width:46ch;color:#cfcdc7}
+.chapter p{max-width:58ch;color:#cfcdc7}
 .chapter__list{display:flex;flex-wrap:wrap;gap:.4rem .5rem}
 .chapter__list li{font-family:var(--f-mono);font-size:var(--t-mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:.35rem .6rem;color:var(--fog-dim)}
 .chapter__foot{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-3)}
@@ -345,7 +345,7 @@ body.menu-open{overflow:hidden}
 /* ---------- Inner pages ---------- */
 .page-hero{padding-top:calc(var(--header-h) + clamp(2.5rem,1.5rem + 5vw,6rem));padding-bottom:clamp(2.5rem,1.5rem + 3vw,4.5rem);border-bottom:1px solid var(--line);position:relative;overflow:hidden;isolation:isolate}
 .page-hero h1{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(3rem,1.4rem + 7vw,9.5rem);line-height:1;letter-spacing:-.01em;max-width:16ch;margin-top:var(--s-3);overflow-wrap:break-word}
-.page-hero h1.is-long{font-size:clamp(2.4rem,1.2rem + 4.6vw,6.4rem)}
+.page-hero h1.is-long{font-size:clamp(1.7rem,.6rem + 5vw,6.4rem);max-width:24ch}
 .page-hero .lead{margin-top:var(--s-3);color:#cfcdc7}
 .page-hero--media{min-height:min(88vh,860px);display:flex;align-items:flex-end}
 .page-hero--media .wrap{position:relative}
@@ -509,13 +509,14 @@ body.menu-open{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.atmo__bg{transform:scale(1.04)!important}}
 
 /* ---------- Text setting ----------
-   Justified only where the measure is wide enough to avoid gaps (no hyphenation
-   on this site): wide reading blocks on tablets/desktops. Phones and narrow
-   columns (the two «Студия» columns, asides, footer, spec table, list items)
-   stay flush left. Short words are tied to the next one at build time (nbsp). */
+   Paragraphs are justified on tablets and desktops; phones stay flush left
+   (no hyphenation on this site, so narrow phone columns would get gaps).
+   Lists, captions, labels and one-line leads stay left. Short words are tied
+   to the next one and dash groups / hyphenated words are kept whole at build time. */
+.nw{white-space:nowrap}
 @media (min-width:1000px){
-  .prose p,.hero__copy p,.cta-band p,.muted.measure{text-align:justify;text-align-last:left}
-  .prose .lead{text-align:left}
+  main p:not(.cue):not(.mono):not(.player__note):not(.form__status),.chapter p{text-align:justify;text-align-last:left}
+  .page-hero .lead,.prose .lead,.figure span,.footer__brand p,.form__foot p,.empty p,.aside-box p,.statement__text p,.contact__note,.cta-band p,.chapter__media figcaption{text-align:left!important}
 }
 p,li,td{text-wrap:pretty}
 h1,h2,h3,.statement__title,.chapter__name,.wcard__title,.acard h3,.h2,.h3{text-wrap:balance}

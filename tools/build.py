@@ -237,7 +237,9 @@ env.globals["VERSION"] = hashlib.sha1(b"".join((ROOT / p).read_bytes() for p in 
 
 SHORT = re.compile(r"(?<![\w\-])([А-Яа-яЁёA-Za-z]{1,2}|[0-9]{1,3})\s+(?=[\w«(\"№0-9])", re.U)
 DASH = re.compile(r"\s+(—|–)\s")
-SKIP = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)", re.S | re.I)
+SKIP = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<title\b.*?</title>|<textarea\b.*?</textarea>|<[^>]+>)", re.S | re.I)
+DASH_GROUP = re.compile(r"(\S+)\s+(—|–)\s+(\S+)")
+HYPHENATED = re.compile(r"(?<![\w\-])([0-9A-Za-zА-Яа-яЁё]+(?:-[0-9A-Za-zА-Яа-яЁё]+)+)(?![\w\-])")
 
 
 _ALL = "[а-яё]"
@@ -284,7 +286,12 @@ def typograph(html_text):
         t = parts[i]
         if not t.strip():
             continue
-        t = DASH.sub("\u00a0\\1 ", t)
+        # a dash keeps both neighbouring words on its line: «дым — атмосферу» moves as one
+        t = DASH_GROUP.sub("\\1\u00a0\\2\u00a0\\3", t)
+        t = re.sub(r"(\S+)\s+(—|–)\s+$", "\\1\u00a0\\2\u00a0", t)  # dash right before a link
+        t = re.sub(r"^\s+(—|–)\s+(\S+)", "\u00a0\\1\u00a0\\2", t)  # dash right after a link
+        # compounds with a hyphen never split at the hyphen: «оператор-постановщик»
+        t = HYPHENATED.sub(lambda m: '<span class="nw">' + m.group(1) + "</span>", t)
         t = SHORT.sub("\\1\u00a0", t)
         t = SHORT.sub("\\1\u00a0", t)  # chains like «и в»
         parts[i] = t
