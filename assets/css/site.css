@@ -509,14 +509,16 @@ body.menu-open{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.atmo__bg{transform:scale(1.04)!important}}
 
 /* ---------- Text setting ----------
-   Paragraphs are justified on tablets and desktops; phones stay flush left
-   (no hyphenation on this site, so narrow phone columns would get gaps).
+   Paragraphs are justified on all screens (phones included, by request).
    Lists, captions, labels and one-line leads stay left. Short words are tied
    to the next one and dash groups / hyphenated words are kept whole at build time. */
 .nw{white-space:nowrap}
+main p:not(.cue):not(.mono):not(.player__note):not(.form__status),.chapter p{text-align:justify;text-align-last:left}
 @media (min-width:1000px){
-  main p:not(.cue):not(.mono):not(.player__note):not(.form__status),.chapter p{text-align:justify;text-align-last:left}
   .page-hero .lead,.prose .lead,.figure span,.footer__brand p,.form__foot p,.empty p,.aside-box p,.statement__text p,.contact__note,.cta-band p,.chapter__media figcaption{text-align:left!important}
+}
+@media (max-width:999px){
+  .figure span,.form__foot p,.empty p,.chapter__media figcaption{text-align:left!important}
 }
 p,li,td{text-wrap:pretty}
 h1,h2,h3,.statement__title,.chapter__name,.wcard__title,.acard h3,.h2,.h3{text-wrap:balance}
