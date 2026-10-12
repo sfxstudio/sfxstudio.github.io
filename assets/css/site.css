@@ -59,6 +59,7 @@
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
+html,body,*{-webkit-hyphens:none!important;hyphens:none!important}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:calc(var(--header-h) + 1rem)}
 body{margin:0;background:var(--carbon);color:var(--fog);font-family:var(--f-text);font-size:var(--t-body);line-height:1.55;font-feature-settings:"kern","liga";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
 img,video,iframe{display:block;max-width:100%}
@@ -160,7 +161,7 @@ body.menu-open{overflow:hidden}
 .hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,6,6,.82) 0%,rgba(5,6,6,.45) 42%,rgba(5,6,6,.15) 70%),linear-gradient(0deg,rgba(5,6,6,.85) 0%,rgba(5,6,6,0) 45%),linear-gradient(180deg,rgba(5,6,6,.6) 0%,rgba(5,6,6,0) 22%)}
 .hero__inner{flex:1;display:grid;grid-template-rows:auto 1fr auto;gap:var(--s-3);padding-top:calc(var(--header-h) + clamp(1rem,3vh,2.5rem));padding-bottom:var(--s-3)}
 .hero__top{display:flex;justify-content:space-between;gap:var(--s-3);flex-wrap:wrap}
-.hero__body{display:grid;gap:var(--s-4);align-content:end;grid-template-columns:1fr}
+.hero__body{display:grid;gap:var(--s-4);align-content:end;grid-template-columns:minmax(0,1fr)}
 @media (min-width:1000px){.hero__body{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:end}}
 .elements{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(3.4rem,min(11.5vh,11vw),10rem);line-height:.98;letter-spacing:-.01em}
 .elements li{overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
@@ -211,7 +212,7 @@ body.menu-open{overflow:hidden}
 @media (min-width:1000px){.chapters{grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:var(--s-6)}}
 .chapter{padding-block:var(--s-5);border-top:1px solid var(--line);display:grid;gap:var(--s-3)}
 @media (min-width:1000px){.chapter{min-height:78vh;align-content:center;padding-block:var(--s-6)}}
-.chapter__name{font-family:var(--f-display);font-weight:800;text-transform:uppercase;overflow-wrap:anywhere;font-size:clamp(3rem,1.8rem + 4.2vw,6.6rem);line-height:1;letter-spacing:-.01em}
+.chapter__name{font-family:var(--f-display);font-weight:800;text-transform:uppercase;overflow-wrap:normal;font-size:clamp(3rem,1.8rem + 4.2vw,6.6rem);line-height:1;letter-spacing:-.01em}
 .chapter__name a{text-decoration:none}
 .chapter__name a:hover{color:var(--ice)}
 .chapter p{max-width:46ch;color:#cfcdc7}
@@ -306,7 +307,7 @@ body.menu-open{overflow:hidden}
 @media (min-width:1000px){.contact{grid-template-columns:minmax(0,6fr) minmax(0,6fr);align-items:start}}
 .contact__big a{display:block;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2.3rem,.9rem + 4.4vw,5.6rem);line-height:1;text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
 .contact__big a:hover{color:var(--ice)}
-.contact__big a + a{white-space:normal;overflow-wrap:anywhere;font-size:clamp(1.6rem,.9rem + 2.8vw,3.4rem);margin-top:.6rem;text-transform:none;font-weight:600}
+.contact__big a + a{white-space:normal;overflow-wrap:normal;font-size:clamp(1.6rem,.9rem + 2.8vw,3.4rem);margin-top:.6rem;text-transform:none;font-weight:600}
 .contact__note{margin-top:var(--s-4);color:var(--fog-dim);max-width:44ch}
 .form{display:grid;gap:var(--s-3);background:var(--graphite);padding:clamp(1.25rem,1rem + 2vw,2.5rem);border:1px solid var(--line)}
 .field{display:grid;gap:.45rem}
@@ -343,7 +344,7 @@ body.menu-open{overflow:hidden}
 
 /* ---------- Inner pages ---------- */
 .page-hero{padding-top:calc(var(--header-h) + clamp(2.5rem,1.5rem + 5vw,6rem));padding-bottom:clamp(2.5rem,1.5rem + 3vw,4.5rem);border-bottom:1px solid var(--line);position:relative;overflow:hidden;isolation:isolate}
-.page-hero h1{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(3rem,1.4rem + 7vw,9.5rem);line-height:1;letter-spacing:-.01em;max-width:16ch;margin-top:var(--s-3);overflow-wrap:anywhere;hyphens:auto}
+.page-hero h1{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(3rem,1.4rem + 7vw,9.5rem);line-height:1;letter-spacing:-.01em;max-width:16ch;margin-top:var(--s-3);overflow-wrap:break-word}
 .page-hero h1.is-long{font-size:clamp(2.4rem,1.2rem + 4.6vw,6.4rem)}
 .page-hero .lead{margin-top:var(--s-3);color:#cfcdc7}
 .page-hero--media{min-height:min(88vh,860px);display:flex;align-items:flex-end}
@@ -386,8 +387,9 @@ body.menu-open{overflow:hidden}
 .pager a{display:grid;gap:.4rem;padding:var(--s-3) 0;text-decoration:none;min-width:0}
 .pager a + a,.pager span + a{text-align:right;border-left:1px solid var(--line);padding-left:var(--s-3)}
 .pager a:first-child{padding-right:var(--s-3)}
-.pager strong{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,1rem + 1.2vw,2.2rem);line-height:1.02;overflow-wrap:anywhere}
+.pager strong{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,1rem + 1.2vw,2.2rem);line-height:1.02;overflow-wrap:normal}
 .pager a:hover strong{color:var(--ice)}
+@media (max-width:600px){.pager{grid-template-columns:1fr}.pager a + a,.pager span + a{border-left:0;border-top:1px solid var(--line);padding-left:0;text-align:left}.pager > span:empty{display:none}}
 
 /* Archive */
 .filters{position:sticky;top:var(--header-h);z-index:20;background:rgba(11,12,13,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -506,7 +508,7 @@ body.menu-open{overflow:hidden}
 /* ---------- Text setting ----------
    Reading paragraphs are justified with Russian hyphenation so lines end flush
    without gaps; short words are tied to the next one at build time (nbsp). */
-.prose p,.chapter p,.statement__text p,.hero__copy p,.page-hero .lead,.contact__note,.cta-band p,.statement__grid .lead,.aside-box p,.footer__brand p,.fx-list li,.spec td,.muted.measure{text-align:justify;text-align-last:left;-webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:7 3 3;text-wrap:pretty}
+.prose p,.chapter p,.statement__text p,.hero__copy p,.page-hero .lead,.contact__note,.cta-band p,.statement__grid .lead,.aside-box p,.footer__brand p,.fx-list li,.spec td,.muted.measure{text-align:justify;text-align-last:left;text-wrap:pretty}
 h1,h2,h3,.statement__title,.chapter__name,.wcard__title,.acard h3,.h2,.h3{text-wrap:balance}
 
 /* Reveal (JS adds .reveal-ready to <html>) */

@@ -288,7 +288,7 @@ def typograph(html_text):
         t = SHORT.sub("\\1\u00a0", t)
         t = SHORT.sub("\\1\u00a0", t)  # chains like «и в»
         parts[i] = t
-    return hyphenate_paragraphs("".join(parts))
+    return "".join(parts)  # no hyphenation: words never break across lines
 
 
 def write(path, template, **ctx):
