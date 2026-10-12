@@ -380,7 +380,7 @@ def main():
                                       og_image="/assets/video/showreel.webp")))
     pages.append(("/katok/", write("katok/index.html", "katok.html", page="katok", title="Каток",
                                    description="Аренда катка с пластиковым льдом площадью до 220 м².",
-                                   og_image="/assets/img/pages/rink-960.webp")))
+                                   og_image="/assets/img/pages/rink-1200.webp")))
     # 404 with redirects for every old URL
     redirects = {i["slug"]: url(i) for i in items}
     redirects.update({f"category/{k}": v for k, v in OLD_CAT.items()})

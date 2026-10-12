@@ -364,6 +364,7 @@ body.menu-open{overflow:hidden}
 
 .player{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
 .player > img{width:100%;height:100%;object-fit:cover;opacity:.8}
+.player--photo > img{opacity:1}
 .player iframe,.player video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
 .player__btn{position:absolute;inset:0;display:grid;place-items:center;background:transparent;border:0;cursor:pointer;color:var(--carbon)}
 .player__btn span{display:inline-flex;align-items:center;gap:.8rem;background:var(--ice);padding:1rem 1.4rem;font-family:var(--f-mono);font-size:.82rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:transform var(--d-fast) var(--ease-out),background var(--d-fast)}
@@ -511,7 +512,7 @@ body.menu-open{overflow:hidden}
    columns (the two «Студия» columns, asides, footer, spec table, list items)
    stay flush left. Short words are tied to the next one at build time (nbsp). */
 @media (min-width:1000px){
-  .prose p,.hero__copy p,.page-hero .lead,.cta-band p,.lead--wide,.muted.measure{text-align:justify;text-align-last:left}
+  .prose p,.hero__copy p,.cta-band p,.lead--wide,.muted.measure{text-align:justify;text-align-last:left}
 }
 p,li,td{text-wrap:pretty}
 h1,h2,h3,.statement__title,.chapter__name,.wcard__title,.acard h3,.h2,.h3{text-wrap:balance}
