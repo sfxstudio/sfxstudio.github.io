@@ -64,7 +64,7 @@ def clean_paragraphs(h):
             if before:
                 runs.append([before, None])
             label = text(m.group(2))
-            href = html.unescape(m.group(1))
+            href = html.unescape(m.group(1)).replace("\\", "").strip("\"' ")
             if label:
                 runs.append([label, href])
             pos = m.end()

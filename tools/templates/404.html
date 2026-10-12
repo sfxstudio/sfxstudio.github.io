@@ -5,7 +5,8 @@
 (function(){var m={{ redirects | tojson }};
 var p=decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g,'');
 var to=m[p]||m[p.replace(/\/page\/\d+$/,'')];
-if(!to&&/^category\//.test(p))to=m[p.split('/').slice(0,2).join('/')];
+if(!to&&/^(category|tag)\//.test(p))to=m[p.split('/').slice(0,2).join('/')];
+if(!to&&/^page\/\d+$/.test(p))to=m.page;
 if(to){document.documentElement.setAttribute('data-redirect','1');location.replace(to+location.hash);}})();
 </script>
 {% endblock %}

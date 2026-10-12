@@ -21,7 +21,7 @@
         <p class="cue no-rule">Работа студии</p>
         <a href="{{ url(target) }}" class="acard">
           <div class="acard__img"><img src="{{ img(target, 960) }}" alt="" width="640" height="360" loading="lazy"></div>
-          <h3>{{ target.project }}{% if target.subtitle %}<small>{{ target.subtitle }}</small>{% endif %}</h3>
+          <h2 class="acard__t">{{ target.project }}{% if target.subtitle %}<small>{{ target.subtitle }}</small>{% endif %}</h2>
           {% if target.effects %}<p>{{ target.effects }}</p>{% endif %}
         </a>
         {% endif %}

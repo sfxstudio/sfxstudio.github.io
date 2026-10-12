@@ -77,7 +77,7 @@ EFFECTS = [
                 "Делаем натурные дымы, туман, пар и цветной дым — атмосферу, которую задаёт оператор-постановщик.",
         "list": ["Атмосферные дымы", "Натурные дымы", "Тяжёлый дым", "Туман", "Пар", "Цветной дым",
                  "Источники дыма"],
-        "loop": "smoke", "loop_credit": "«Завод», 2019",
+        "loop": "smoke", "loop_credit": "«Майские ленты», 2015",
     },
     {
         "key": "fire", "name": "Огонь", "short": "Огонь", "num": "05",
@@ -97,7 +97,7 @@ EFFECTS = [
                 "пневмовыброс объектов, попадание пуль, выброс крови и краски, конфетти, пена и мыльные пузыри.",
         "list": ["Безопасное стекло", "Пух", "Пыль", "Пневмовыброс объектов", "Попадание пуль", "Выброс крови",
                  "Конфетти", "Пена", "Мыльные пузыри", "Имитация дракона"],
-        "loop": "special", "loop_credit": "«Майские ленты», 2015",
+        "loop": "special", "loop_credit": "«Банк Точка», 2019",
     },
 ]
 EFFECT_BY_KEY = {e["key"]: e for e in EFFECTS}
@@ -217,8 +217,10 @@ tag_counter = Counter()
 tag_names = {}
 for it in items:
     for t in it["tags"]:
-        tag_counter[t["slug"]] += 1
         tag_names[t["slug"]] = t["name"]
+for it in works:  # counts must match what the archive filter shows
+    for t in it["tags"]:
+        tag_counter[t["slug"]] += 1
 TOP_TAGS = [(s, tag_names[s], c) for s, c in tag_counter.most_common(30)]
 
 env = Environment(loader=FileSystemLoader(ROOT / "tools/templates"), autoescape=select_autoescape(["html", "xml"]),
@@ -327,6 +329,7 @@ def main():
     redirects = {i["slug"]: url(i) for i in items}
     redirects.update({f"category/{k}": v for k, v in OLD_CAT.items()})
     redirects.update({f"tag/{s}": f"/works/?tag={s}" for s in tag_names})
+    redirects.update({"feed": "/feed.xml", "page": "/works/"})
     write("404.html", "404.html", page="404", title="Страница не найдена", redirects=redirects,
           description="Страница не найдена.", noindex=True)
     # robots, sitemap, feed

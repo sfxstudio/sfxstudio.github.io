@@ -67,7 +67,8 @@
     var credit = $('[data-hero-credit]', hero);
     var pauseBtn = $('[data-hero-pause]', hero);
     var userPaused = false, current = -1;
-    var source = hv && hv.querySelector('source');
+    var sources = hv ? $$('source', hv) : [];
+    var source = sources[0];
 
     var setActive = function (i) {
       if (i === current || !map[i]) return;
@@ -104,7 +105,8 @@
 
     if (hv && source) {
       var wantMotion = !reduceMQ.matches && !saveData;
-      source.src = window.innerWidth >= 900 ? source.dataset.srcWide : source.dataset.srcNarrow;
+      var wide = window.innerWidth >= 900;
+      sources.forEach(function (sEl) { sEl.src = wide ? sEl.dataset.srcWide : sEl.dataset.srcNarrow; });
       if (wantMotion) {
         hv.load();
         hv.addEventListener('playing', function () { setPaused(false); if (!raf) raf = requestAnimationFrame(tick); });

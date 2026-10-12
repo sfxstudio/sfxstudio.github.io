@@ -10,6 +10,7 @@
 <section class="hero" data-hero aria-label="Первый экран">
   <div class="hero__media" aria-hidden="true">
     <video data-hero-video muted playsinline loop preload="metadata" poster="/assets/video/hero-poster.webp" width="1280" height="720">
+      <source data-src-wide="/assets/video/hero-1280.webm" data-src-narrow="/assets/video/hero-720.webm" type="video/webm">
       <source data-src-wide="/assets/video/hero-1280.mp4" data-src-narrow="/assets/video/hero-720.mp4" type="video/mp4">
     </video>
   </div>
@@ -179,7 +180,7 @@
         </ul>
       </div>
       <div>
-        <p class="cue no-rule" style="margin-bottom:1rem">Эффекты в архиве работ · сколько раз</p>
+        <p class="cue no-rule" style="margin-bottom:1rem">Эффекты в архиве · число работ</p>
         <ul class="tagdex">
           {% for slug, name, count in top_tags %}
           <li><a href="/works/?tag={{ slug }}"><span>{{ name }}</span><span>{{ count }}</span></a></li>

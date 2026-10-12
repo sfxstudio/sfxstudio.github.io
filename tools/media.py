@@ -26,20 +26,29 @@ VID = ROOT / "assets/video"
 
 # Real shots from the studio's own clips: (element, file, start, duration, credit)
 HERO = [
-    ("snow", "2023/03/lod-iskusstvennyy-sneg.mp4", 120.4, 3.8, "Лёд 2"),
-    ("rain", "2023/10/Legenda-№17.mkv", 5.0, 3.8, "Легенда №17"),
-    ("wind", "2024/02/dve-zhenshchiny-veter.mkv", 30.6, 3.8, "Две женщины"),
-    ("smoke", "2022/04/the_last_bogatyr_smoke.mp4", 5.0, 3.8, "Последний богатырь"),
-    ("fire", "2023/12/Чернобыль_огонь.mp4", 11.8, 3.8, "Чернобыль: Зона отчуждения"),
+    ("snow", "2023/03/lod-iskusstvennyy-sneg.mp4", 120.4, 3.4, "Лёд 2"),
+    ("rain", "2023/10/Legenda-№17.mkv", 5.0, 3.4, "Легенда №17"),
+    ("wind", "2024/02/dve-zhenshchiny-veter.mkv", 30.6, 3.4, "Две женщины"),
+    ("smoke", "2022/04/the_last_bogatyr_smoke.mp4", 5.0, 2.2, "Последний богатырь"),
+    ("fire", "2023/12/Чернобыль_огонь.mp4", 11.8, 3.6, "Чернобыль: Зона отчуждения"),
 ]
 LOOPS = {
     "snow": ("2023/03/horde_snow.mp4", 15.0, 6),
     "rain": ("2024/02/best_day_rain.mp4", 40.5, 6),
     "wind": ("2024/02/dve-zhenshchiny-veter.mkv", 35.0, 6),
-    "smoke": ("2021/08/factory-smoke.mp4", 3.0, 6),
+    "smoke": ("2022/02/mayskiye-lenty-tyazhelyy-dym.mp4", 4.5, 6),
     "fire": ("2022/04/the_last_bogatyr_fire.mp4", 12.0, 6),
-    "special": ("2022/02/mayskiye-lenty-pukh.mp4", 3.5, 6),
+    "special": ("2022/02/Bank-Point-Love-can-not-be-copied.mp4", 45.7, 3.2),
 }
+
+
+def content_crop(src, ss, d):
+    """ffmpeg cropdetect over the segment -> 'crop=w:h:x:y' without letterbox bars."""
+    out = subprocess.run(["ffmpeg", "-v", "info", "-ss", str(ss), "-t", str(d), "-i", str(src), "-vf",
+                          "cropdetect=limit=24:round=2:reset=0", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    found = [l.split("crop=")[-1].strip() for l in out.splitlines() if "crop=" in l]
+    return "crop=" + found[-1] if found else "null"
 
 
 def ff(*args):
@@ -106,18 +115,6 @@ def video():
     (VID / "clips").mkdir(parents=True, exist_ok=True)
     (VID / "loops").mkdir(parents=True, exist_ok=True)
     data = json.loads((ROOT / "data/site.json").read_text())
-    # Clips that only lived on the old server
-    for it in data["items"]:
-        v = it["video"]
-        if not v or v["type"] != "mp4":
-            continue
-        dst = VID / "clips" / f"{it['slug']}.mp4"
-        poster = VID / "clips" / f"{it['slug']}.webp"
-        if not dst.exists():
-            ff("-i", str(SRC / v["src"]), "-vf", "scale=-2:'min(720,ih)'", "-c:v", "libx264", "-preset", "slow",
-               "-crf", "27", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", str(dst))
-        if not poster.exists():
-            ff("-ss", "3", "-i", str(dst), "-frames:v", "1", "-vf", "scale=960:-2", "-quality", "74", str(poster))
     # Hero montage: hard cuts, no sound, two sizes
     for width, crf, name in ((1280, 26, "hero-1280"), (720, 28, "hero-720")):
         dst = VID / f"{name}.mp4"
@@ -127,7 +124,8 @@ def video():
         for i, (_, f, ss, d, _) in enumerate(HERO):
             part = VID / f"_part{i}.mp4"
             ff("-ss", str(ss), "-t", str(d), "-i", str(SRC / f), "-an",
-               "-vf", f"scale={width}:-2:flags=lanczos,fps=25,setsar=1", "-c:v", "libx264", "-preset", "slow",
+               "-vf", f"{content_crop(SRC / f, ss, d)},scale={width}:{width * 9 // 16}:force_original_aspect_ratio=increase:flags=lanczos,"
+                     f"crop={width}:{width * 9 // 16},fps=25,setsar=1", "-c:v", "libx264", "-preset", "slow",
                "-crf", str(crf), "-pix_fmt", "yuv420p", str(part))
             parts.append(part)
         lst = VID / "_list.txt"
@@ -136,6 +134,11 @@ def video():
         for p in parts:
             p.unlink()
         lst.unlink()
+    for name, crf in (("hero-1280", 38), ("hero-720", 40)):
+        webm = VID / f"{name}.webm"
+        if not webm.exists():
+            ff("-i", str(VID / f"{name}.mp4"), "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", str(crf), "-row-mt", "1",
+               "-deadline", "good", "-cpu-used", "4", "-an", str(webm))
     poster = VID / "hero-poster.webp"
     if not poster.exists():
         ff("-ss", "1.2", "-i", str(VID / "hero-1280.mp4"), "-frames:v", "1", "-quality", "70", str(poster))
@@ -145,16 +148,29 @@ def video():
     for key, (f, ss, d) in LOOPS.items():
         dst = VID / "loops" / f"{key}.mp4"
         if not dst.exists():
-            ff("-ss", str(ss), "-t", str(d), "-i", str(SRC / f), "-an", "-vf", "scale=960:-2:flags=lanczos,fps=25",
+            ff("-ss", str(ss), "-t", str(d), "-i", str(SRC / f), "-an", "-vf",
+               f"{content_crop(SRC / f, ss, d)},scale=960:600:force_original_aspect_ratio=increase:flags=lanczos,crop=960:600,fps=25",
                "-c:v", "libx264", "-preset", "slow", "-crf", "28", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(dst))
         p = VID / "loops" / f"{key}.webp"
         if not p.exists():
             ff("-ss", "1", "-i", str(dst), "-frames:v", "1", "-quality", "70", str(p))
     sr = VID / "showreel.mp4"
     if not sr.exists():
-        ff("-i", str(SRC / "2022/09/showreel.mp4"), "-c:v", "libx264", "-preset", "slow", "-crf", "25",
+        ff("-i", str(SRC / "2022/09/showreel.mp4"), "-c:v", "libx264", "-preset", "slow", "-crf", "29",
            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "112k", "-movflags", "+faststart", str(sr))
         ff("-ss", "178", "-i", str(sr), "-frames:v", "1", "-quality", "72", str(VID / "showreel.webp"))
+    # Clips that only lived on the old server
+    for it in data["items"]:
+        v = it["video"]
+        if not v or v["type"] != "mp4":
+            continue
+        dst = VID / "clips" / f"{it['slug']}.mp4"
+        poster = VID / "clips" / f"{it['slug']}.webp"
+        if not dst.exists():
+            ff("-i", str(SRC / v["src"]), "-vf", "scale=-2:'min(720,ih)'", "-c:v", "libx264", "-preset", "medium",
+               "-crf", "30", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", str(dst))
+        if not poster.exists():
+            ff("-ss", "3", "-i", str(dst), "-frames:v", "1", "-vf", "scale=960:-2", "-quality", "74", str(poster))
     print("video done")
 
 
