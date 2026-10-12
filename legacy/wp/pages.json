@@ -1,0 +1,926 @@
+[
+ {
+  "id": 793,
+  "date": "2022-09-01T17:32:47",
+  "date_gmt": "2022-09-01T14:32:47",
+  "guid": {
+   "rendered": "http://sfxstudio.ru/?page_id=793"
+  },
+  "modified": "2022-09-01T18:19:35",
+  "modified_gmt": "2022-09-01T15:19:35",
+  "slug": "showreel",
+  "status": "publish",
+  "type": "page",
+  "link": "https://sfxstudio.ru/showreel/",
+  "title": {
+   "rendered": "SHOWREEL"
+  },
+  "content": {
+   "rendered": "\n<figure style=\"max-width:640px;max-height:480px;\" class=\"wp-block-video\"><video controls src=\"http://sfxstudio.ru/wp-content/uploads/2022/09/showreel.mp4\"></video></figure>\n",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+   "footnotes": ""
+  },
+  "class_list": [
+   "post-793",
+   "page",
+   "type-page",
+   "status-publish",
+   "hentry"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v27.4 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>SHOWREEL - SfxStudio.ru</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://sfxstudio.ru/showreel/\" />\n<meta property=\"og:locale\" content=\"ru_RU\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"SHOWREEL - SfxStudio.ru\" />\n<meta property=\"og:url\" content=\"https://sfxstudio.ru/showreel/\" />\n<meta property=\"og:site_name\" content=\"SfxStudio.ru\" />\n<meta property=\"article:modified_time\" content=\"2022-09-01T15:19:35+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/showreel\\/\",\"url\":\"https:\\/\\/sfxstudio.ru\\/showreel\\/\",\"name\":\"SHOWREEL - SfxStudio.ru\",\"isPartOf\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#website\"},\"datePublished\":\"2022-09-01T14:32:47+00:00\",\"dateModified\":\"2022-09-01T15:19:35+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/showreel\\/#breadcrumb\"},\"inLanguage\":\"ru-RU\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/sfxstudio.ru\\/showreel\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/showreel\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Главная страница\",\"item\":\"http:\\/\\/sfxstudio.ru\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"SHOWREEL\"}]},{\"@type\":\"WebSite\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#website\",\"url\":\"http:\\/\\/sfxstudio.ru\\/\",\"name\":\"SfxStudio.ru\",\"description\":\"Профессиональные спецэффекты на съемочной площадке\",\"publisher\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http:\\/\\/sfxstudio.ru\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"ru-RU\"},{\"@type\":\"Organization\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#organization\",\"name\":\"SfxStudio.ru\",\"url\":\"http:\\/\\/sfxstudio.ru\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"contentUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"width\":289,\"height\":180,\"caption\":\"SfxStudio.ru\"},\"image\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#\\/schema\\/logo\\/image\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "SHOWREEL - SfxStudio.ru",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://sfxstudio.ru/showreel/",
+   "og_locale": "ru_RU",
+   "og_type": "article",
+   "og_title": "SHOWREEL - SfxStudio.ru",
+   "og_url": "https://sfxstudio.ru/showreel/",
+   "og_site_name": "SfxStudio.ru",
+   "article_modified_time": "2022-09-01T15:19:35+00:00",
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "WebPage",
+      "@id": "https://sfxstudio.ru/showreel/",
+      "url": "https://sfxstudio.ru/showreel/",
+      "name": "SHOWREEL - SfxStudio.ru",
+      "isPartOf": {
+       "@id": "http://sfxstudio.ru/#website"
+      },
+      "datePublished": "2022-09-01T14:32:47+00:00",
+      "dateModified": "2022-09-01T15:19:35+00:00",
+      "breadcrumb": {
+       "@id": "https://sfxstudio.ru/showreel/#breadcrumb"
+      },
+      "inLanguage": "ru-RU",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://sfxstudio.ru/showreel/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://sfxstudio.ru/showreel/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная страница",
+        "item": "http://sfxstudio.ru/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SHOWREEL"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "http://sfxstudio.ru/#website",
+      "url": "http://sfxstudio.ru/",
+      "name": "SfxStudio.ru",
+      "description": "Профессиональные спецэффекты на съемочной площадке",
+      "publisher": {
+       "@id": "http://sfxstudio.ru/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "http://sfxstudio.ru/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "ru-RU"
+     },
+     {
+      "@type": "Organization",
+      "@id": "http://sfxstudio.ru/#organization",
+      "name": "SfxStudio.ru",
+      "url": "http://sfxstudio.ru/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "ru-RU",
+       "@id": "http://sfxstudio.ru/#/schema/logo/image/",
+       "url": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+       "contentUrl": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+       "width": 289,
+       "height": 180,
+       "caption": "SfxStudio.ru"
+      },
+      "image": {
+       "@id": "http://sfxstudio.ru/#/schema/logo/image/"
+      }
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/793",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/types/page"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/comments?post=793"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 13,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/793/revisions"
+    }
+   ],
+   "predecessor-version": [
+    {
+     "id": 809,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/793/revisions/809"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/media?parent=793"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 788,
+  "date": "2022-09-01T15:20:29",
+  "date_gmt": "2022-09-01T12:20:29",
+  "guid": {
+   "rendered": "http://sfxstudio.ru/?page_id=788"
+  },
+  "modified": "2023-01-31T10:11:42",
+  "modified_gmt": "2023-01-31T07:11:42",
+  "slug": "katok",
+  "status": "publish",
+  "type": "page",
+  "link": "https://sfxstudio.ru/katok/",
+  "title": {
+   "rendered": "Каток"
+  },
+  "content": {
+   "rendered": "\n<figure class=\"wp-block-image size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" src=\"http://sfxstudio.ru/wp-content/uploads/2022/09/rink.jpg\" alt=\"\" class=\"wp-image-791\" width=\"320\" height=\"180\" srcset=\"https://sfxstudio.ru/wp-content/uploads/2022/09/rink.jpg 640w, https://sfxstudio.ru/wp-content/uploads/2022/09/rink-300x169.jpg 300w\" sizes=\"auto, (max-width: 320px) 100vw, 320px\" /></figure>\n\n\n\n<p>Сдаем в аренду каток с пластиковым льдом.</p>\n\n\n\n<p>Размер катка может варьироваться как в длину, так и в ширину.</p>\n\n\n\n<p>Максимальная площадь пластикового катка составляет 220 м<sup>2</sup>.</p>\n\n\n\n<p><br>По вопросам аренды и покупки оборудования обращайтесь к нашим менеджерам любым способом, указанным на странице <a href=\"/contacts/\" data-type=\"URL\" data-id=\"/contacts/\">Контакты</a>.</p>\n",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Сдаем в аренду каток с пластиковым льдом. Размер катка может варьироваться как в длину, так и в ширину. Максимальная площадь пластикового катка составляет 220 м2. По вопросам аренды и покупки оборудования обращайтесь к нашим менеджерам любым способом, указанным на странице Контакты.</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 20,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+   "footnotes": ""
+  },
+  "class_list": [
+   "post-788",
+   "page",
+   "type-page",
+   "status-publish",
+   "hentry"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v27.4 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Каток - SfxStudio.ru</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://sfxstudio.ru/katok/\" />\n<meta property=\"og:locale\" content=\"ru_RU\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Каток - SfxStudio.ru\" />\n<meta property=\"og:description\" content=\"Сдаем в аренду каток с пластиковым льдом. Размер катка может варьироваться как в длину, так и в ширину. Максимальная площадь пластикового катка составляет 220 м2. По вопросам аренды и покупки оборудования обращайтесь к нашим менеджерам любым способом, указанным на странице Контакты.\" />\n<meta property=\"og:url\" content=\"https://sfxstudio.ru/katok/\" />\n<meta property=\"og:site_name\" content=\"SfxStudio.ru\" />\n<meta property=\"article:modified_time\" content=\"2023-01-31T07:11:42+00:00\" />\n<meta property=\"og:image\" content=\"http://sfxstudio.ru/wp-content/uploads/2022/09/rink.jpg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Примерное время для чтения\" />\n\t<meta name=\"twitter:data1\" content=\"1 минута\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/katok\\/\",\"url\":\"https:\\/\\/sfxstudio.ru\\/katok\\/\",\"name\":\"Каток - SfxStudio.ru\",\"isPartOf\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/katok\\/#primaryimage\"},\"image\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/katok\\/#primaryimage\"},\"thumbnailUrl\":\"http:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2022\\/09\\/rink.jpg\",\"datePublished\":\"2022-09-01T12:20:29+00:00\",\"dateModified\":\"2023-01-31T07:11:42+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/katok\\/#breadcrumb\"},\"inLanguage\":\"ru-RU\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/sfxstudio.ru\\/katok\\/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/katok\\/#primaryimage\",\"url\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2022\\/09\\/rink.jpg\",\"contentUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2022\\/09\\/rink.jpg\",\"width\":640,\"height\":360},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/katok\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Главная страница\",\"item\":\"http:\\/\\/sfxstudio.ru\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Каток\"}]},{\"@type\":\"WebSite\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#website\",\"url\":\"http:\\/\\/sfxstudio.ru\\/\",\"name\":\"SfxStudio.ru\",\"description\":\"Профессиональные спецэффекты на съемочной площадке\",\"publisher\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http:\\/\\/sfxstudio.ru\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"ru-RU\"},{\"@type\":\"Organization\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#organization\",\"name\":\"SfxStudio.ru\",\"url\":\"http:\\/\\/sfxstudio.ru\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"contentUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"width\":289,\"height\":180,\"caption\":\"SfxStudio.ru\"},\"image\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#\\/schema\\/logo\\/image\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Каток - SfxStudio.ru",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://sfxstudio.ru/katok/",
+   "og_locale": "ru_RU",
+   "og_type": "article",
+   "og_title": "Каток - SfxStudio.ru",
+   "og_description": "Сдаем в аренду каток с пластиковым льдом. Размер катка может варьироваться как в длину, так и в ширину. Максимальная площадь пластикового катка составляет 220 м2. По вопросам аренды и покупки оборудования обращайтесь к нашим менеджерам любым способом, указанным на странице Контакты.",
+   "og_url": "https://sfxstudio.ru/katok/",
+   "og_site_name": "SfxStudio.ru",
+   "article_modified_time": "2023-01-31T07:11:42+00:00",
+   "og_image": [
+    {
+     "url": "http://sfxstudio.ru/wp-content/uploads/2022/09/rink.jpg",
+     "type": "",
+     "width": "",
+     "height": ""
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "twitter_misc": {
+    "Примерное время для чтения": "1 минута"
+   },
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "WebPage",
+      "@id": "https://sfxstudio.ru/katok/",
+      "url": "https://sfxstudio.ru/katok/",
+      "name": "Каток - SfxStudio.ru",
+      "isPartOf": {
+       "@id": "http://sfxstudio.ru/#website"
+      },
+      "primaryImageOfPage": {
+       "@id": "https://sfxstudio.ru/katok/#primaryimage"
+      },
+      "image": {
+       "@id": "https://sfxstudio.ru/katok/#primaryimage"
+      },
+      "thumbnailUrl": "http://sfxstudio.ru/wp-content/uploads/2022/09/rink.jpg",
+      "datePublished": "2022-09-01T12:20:29+00:00",
+      "dateModified": "2023-01-31T07:11:42+00:00",
+      "breadcrumb": {
+       "@id": "https://sfxstudio.ru/katok/#breadcrumb"
+      },
+      "inLanguage": "ru-RU",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://sfxstudio.ru/katok/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "ImageObject",
+      "inLanguage": "ru-RU",
+      "@id": "https://sfxstudio.ru/katok/#primaryimage",
+      "url": "https://sfxstudio.ru/wp-content/uploads/2022/09/rink.jpg",
+      "contentUrl": "https://sfxstudio.ru/wp-content/uploads/2022/09/rink.jpg",
+      "width": 640,
+      "height": 360
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://sfxstudio.ru/katok/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная страница",
+        "item": "http://sfxstudio.ru/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Каток"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "http://sfxstudio.ru/#website",
+      "url": "http://sfxstudio.ru/",
+      "name": "SfxStudio.ru",
+      "description": "Профессиональные спецэффекты на съемочной площадке",
+      "publisher": {
+       "@id": "http://sfxstudio.ru/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "http://sfxstudio.ru/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "ru-RU"
+     },
+     {
+      "@type": "Organization",
+      "@id": "http://sfxstudio.ru/#organization",
+      "name": "SfxStudio.ru",
+      "url": "http://sfxstudio.ru/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "ru-RU",
+       "@id": "http://sfxstudio.ru/#/schema/logo/image/",
+       "url": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+       "contentUrl": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+       "width": 289,
+       "height": 180,
+       "caption": "SfxStudio.ru"
+      },
+      "image": {
+       "@id": "http://sfxstudio.ru/#/schema/logo/image/"
+      }
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/788",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/types/page"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/comments?post=788"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 2,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/788/revisions"
+    }
+   ],
+   "predecessor-version": [
+    {
+     "id": 792,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/788/revisions/792"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/media?parent=788"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 96,
+  "date": "2020-11-30T16:11:51",
+  "date_gmt": "2020-11-30T13:11:51",
+  "guid": {
+   "rendered": "http://sfx.between-us-girls.ru/?page_id=96"
+  },
+  "modified": "2022-09-01T18:27:02",
+  "modified_gmt": "2022-09-01T15:27:02",
+  "slug": "contacts",
+  "status": "publish",
+  "type": "page",
+  "link": "https://sfxstudio.ru/contacts/",
+  "title": {
+   "rendered": "Контакты"
+  },
+  "content": {
+   "rendered": "\n<p>Профессиональные спецэффекты на съемочной площадке для съемки кино- и видео-продукции, декорирования зданий и помещений, а также для оформления витрин и фотосессий.</p>\n\n\n\n<p>Студия спецэффектов</p>\n\n\n\n<p>Тел.&nbsp;<a href=\"tel:+7 (925) 543-5160\">+7 (925) 543-5160</a></p>\n\n\n\n<p>E-mail:&nbsp;<a rel=\"noreferrer noopener\" href=\"mailto:info@sfxstudio.ru\" target=\"_blank\">info@sfxstudio.ru</a></p>\n\n\n\n<p></p>\n",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Профессиональные спецэффекты на съемочной площадке для съемки кино- и видео-продукции, декорирования зданий и помещений, а также для оформления витрин и фотосессий. Студия спецэффектов Тел.&nbsp;+7 (925) 543-5160 E-mail:&nbsp;info@sfxstudio.ru</p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 13,
+  "parent": 0,
+  "menu_order": 30,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+   "footnotes": ""
+  },
+  "class_list": [
+   "post-96",
+   "page",
+   "type-page",
+   "status-publish",
+   "has-post-thumbnail",
+   "hentry"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v27.4 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Контакты - SfxStudio.ru</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://sfxstudio.ru/contacts/\" />\n<meta property=\"og:locale\" content=\"ru_RU\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Контакты - SfxStudio.ru\" />\n<meta property=\"og:description\" content=\"Профессиональные спецэффекты на съемочной площадке для съемки кино- и видео-продукции, декорирования зданий и помещений, а также для оформления витрин и фотосессий. Студия спецэффектов Тел.&nbsp;+7 (925) 543-5160 E-mail:&nbsp;info@sfxstudio.ru\" />\n<meta property=\"og:url\" content=\"https://sfxstudio.ru/contacts/\" />\n<meta property=\"og:site_name\" content=\"SfxStudio.ru\" />\n<meta property=\"article:modified_time\" content=\"2022-09-01T15:27:02+00:00\" />\n<meta property=\"og:image\" content=\"https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png\" />\n\t<meta property=\"og:image:width\" content=\"289\" />\n\t<meta property=\"og:image:height\" content=\"180\" />\n\t<meta property=\"og:image:type\" content=\"image/png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/contacts\\/\",\"url\":\"https:\\/\\/sfxstudio.ru\\/contacts\\/\",\"name\":\"Контакты - SfxStudio.ru\",\"isPartOf\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/contacts\\/#primaryimage\"},\"image\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/contacts\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"datePublished\":\"2020-11-30T13:11:51+00:00\",\"dateModified\":\"2022-09-01T15:27:02+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/contacts\\/#breadcrumb\"},\"inLanguage\":\"ru-RU\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/sfxstudio.ru\\/contacts\\/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/contacts\\/#primaryimage\",\"url\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"contentUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"width\":289,\"height\":180},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/contacts\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Главная страница\",\"item\":\"http:\\/\\/sfxstudio.ru\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Контакты\"}]},{\"@type\":\"WebSite\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#website\",\"url\":\"http:\\/\\/sfxstudio.ru\\/\",\"name\":\"SfxStudio.ru\",\"description\":\"Профессиональные спецэффекты на съемочной площадке\",\"publisher\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http:\\/\\/sfxstudio.ru\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"ru-RU\"},{\"@type\":\"Organization\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#organization\",\"name\":\"SfxStudio.ru\",\"url\":\"http:\\/\\/sfxstudio.ru\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"contentUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"width\":289,\"height\":180,\"caption\":\"SfxStudio.ru\"},\"image\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#\\/schema\\/logo\\/image\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "Контакты - SfxStudio.ru",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://sfxstudio.ru/contacts/",
+   "og_locale": "ru_RU",
+   "og_type": "article",
+   "og_title": "Контакты - SfxStudio.ru",
+   "og_description": "Профессиональные спецэффекты на съемочной площадке для съемки кино- и видео-продукции, декорирования зданий и помещений, а также для оформления витрин и фотосессий. Студия спецэффектов Тел.&nbsp;+7 (925) 543-5160 E-mail:&nbsp;info@sfxstudio.ru",
+   "og_url": "https://sfxstudio.ru/contacts/",
+   "og_site_name": "SfxStudio.ru",
+   "article_modified_time": "2022-09-01T15:27:02+00:00",
+   "og_image": [
+    {
+     "width": 289,
+     "height": 180,
+     "url": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+     "type": "image/png"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "WebPage",
+      "@id": "https://sfxstudio.ru/contacts/",
+      "url": "https://sfxstudio.ru/contacts/",
+      "name": "Контакты - SfxStudio.ru",
+      "isPartOf": {
+       "@id": "http://sfxstudio.ru/#website"
+      },
+      "primaryImageOfPage": {
+       "@id": "https://sfxstudio.ru/contacts/#primaryimage"
+      },
+      "image": {
+       "@id": "https://sfxstudio.ru/contacts/#primaryimage"
+      },
+      "thumbnailUrl": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+      "datePublished": "2020-11-30T13:11:51+00:00",
+      "dateModified": "2022-09-01T15:27:02+00:00",
+      "breadcrumb": {
+       "@id": "https://sfxstudio.ru/contacts/#breadcrumb"
+      },
+      "inLanguage": "ru-RU",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://sfxstudio.ru/contacts/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "ImageObject",
+      "inLanguage": "ru-RU",
+      "@id": "https://sfxstudio.ru/contacts/#primaryimage",
+      "url": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+      "contentUrl": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+      "width": 289,
+      "height": 180
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://sfxstudio.ru/contacts/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная страница",
+        "item": "http://sfxstudio.ru/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Контакты"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "http://sfxstudio.ru/#website",
+      "url": "http://sfxstudio.ru/",
+      "name": "SfxStudio.ru",
+      "description": "Профессиональные спецэффекты на съемочной площадке",
+      "publisher": {
+       "@id": "http://sfxstudio.ru/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "http://sfxstudio.ru/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "ru-RU"
+     },
+     {
+      "@type": "Organization",
+      "@id": "http://sfxstudio.ru/#organization",
+      "name": "SfxStudio.ru",
+      "url": "http://sfxstudio.ru/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "ru-RU",
+       "@id": "http://sfxstudio.ru/#/schema/logo/image/",
+       "url": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+       "contentUrl": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+       "width": 289,
+       "height": 180,
+       "caption": "SfxStudio.ru"
+      },
+      "image": {
+       "@id": "http://sfxstudio.ru/#/schema/logo/image/"
+      }
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/96",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/types/page"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/comments?post=96"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 5,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/96/revisions"
+    }
+   ],
+   "predecessor-version": [
+    {
+     "id": 810,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/96/revisions/810"
+    }
+   ],
+   "wp:featuredmedia": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/media/13"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/media?parent=96"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 2,
+  "date": "2019-05-10T03:48:21",
+  "date_gmt": "2019-05-10T00:48:21",
+  "guid": {
+   "rendered": "http://sfx.between-us-girls.ru?page_id=2"
+  },
+  "modified": "2020-11-30T16:21:23",
+  "modified_gmt": "2020-11-30T13:21:23",
+  "slug": "about-us",
+  "status": "publish",
+  "type": "page",
+  "link": "https://sfxstudio.ru/about-us/",
+  "title": {
+   "rendered": "О нас"
+  },
+  "content": {
+   "rendered": "<p class=\"article_head\">Студия спецэффектов SfxStudio.ru приветствует Вас.</p>\n<p>Наша команда профессионалов обладает огромным опытом и всем необходимым оборудованием для создания максимально реалистичного зимнего окружения как в помещениях, так и на открытом воздухе: Декорирование помещений, отдельных предметов и открытых пространств искусственным снегом. Создание сугробов и снежных наносов; Создание эффекта падающего снега с хлопьями различного объема; Имитация непогоды – ветра, пурги и метели. С помощью данных эффектов можно создать действительно качественное видео вне зависимости от времени года съемок; Эффект обморожения лица и рук. Для музыкальных клипов, реклам и фильмов этот эффект незаменим и при этом выглядит естественно; Покрытие инеем окон и других поверхностей; Декорирование помещения сосульками; Создание ледяных поверхностей. Имитация проваливания под лед.</p>\n<p>Это очень важные, но всего лишь некоторые из зимних эффектов, с применение искусственного снега, инея и пластикового льда, которые мы создаем.</p>\n<p>Имитация дождя, водяного пара, фонтанов и водопадов, тумана и дыма – это те эффекты, которые мы делаем по умолчанию, и они могут быть востребованы для ваших съемок. Дождевые стойки и &#171;Hollywood system&#187; создадут полную иллюзию дождя. Различные дым-машины, и генераторы тяжелого дыма создадут атмосферные дымы необходимой текстуры и плотности.</p>\n<p>С помощью ветродуя мы можем создавать простые эффекты типа развевающихся волос. Комбинируя ветродуи необходимой мощности с другим оборудованием или другими эффектами, мы можем создать иллюзию практически любого погодного явления на нашей планете.</p>\n<p>Другим направлением нашей деятельности является создание различных пиротехнических эффектов. Это костры и факелы, взрывы и ревущее пламя, а также их последствия, такие как вылетающие двери, окна или оконные проемы, ожоги тела, клубы густого разноцветного дыма, падающий пепел и многое другое.</p>\n<p>Мы делаем абсолютно реалистичные спецэффекты на съемочной площадке на высочайшем профессиональном уровне. Пух, разноцветная пыль и пепел, а также различное пневмооборудование создадут в кадре ту картинку, что нужна именно Вам.</p>\n<p>Имеются у нас в арсенале эффекты, связанные с разбивающимся стеклом, будь то бутылки или непосредственно оконное стекло. Наше бьющее (бутафорское) стекло ни при каких условиях не может нанести повреждений актерам и другому персоналу занятому на съёмках.</p>\n<p>В наличии у нас есть и совсем специфическое оборудование, которое может понадобиться для проведения вашего мероприятия. Это пластиковый каток, генераторы мыльных пузырей, генераторы пены и пушки для конфетти.</p>\n<p>В настоящее время штат наших специалистов может обеспечить постановку спецэффектов одновременно на 7 площадках.</p>\n",
+   "protected": false
+  },
+  "excerpt": {
+   "rendered": "<p>Студия спецэффектов SfxStudio.ru приветствует Вас. Наша команда профессионалов обладает огромным опытом и всем необходимым оборудованием для создания максимально реалистичного зимнего окружения как в помещениях, так и на открытом воздухе: Декорирование помещений, отдельных предметов и открытых пространств искусственным снегом. Создание сугробов и снежных наносов; Создание эффекта падающего снега с хлопьями различного объема; Имитация непогоды – ветра, &hellip;<br /><a href=\"https://sfxstudio.ru/about-us/\" class=\"more-link pen_button pen_element_default pen_icon_arrow_double\">Читать далее <span class=\"screen-reader-text\">О нас</span></a></p>\n",
+   "protected": false
+  },
+  "author": 1,
+  "featured_media": 39,
+  "parent": 0,
+  "menu_order": 10,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+   "footnotes": ""
+  },
+  "class_list": [
+   "post-2",
+   "page",
+   "type-page",
+   "status-publish",
+   "has-post-thumbnail",
+   "hentry"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v27.4 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>О нас - SfxStudio.ru</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://sfxstudio.ru/about-us/\" />\n<meta property=\"og:locale\" content=\"ru_RU\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"О нас - SfxStudio.ru\" />\n<meta property=\"og:description\" content=\"Студия спецэффектов SfxStudio.ru приветствует Вас. Наша команда профессионалов обладает огромным опытом и всем необходимым оборудованием для создания максимально реалистичного зимнего окружения как в помещениях, так и на открытом воздухе: Декорирование помещений, отдельных предметов и открытых пространств искусственным снегом. Создание сугробов и снежных наносов; Создание эффекта падающего снега с хлопьями различного объема; Имитация непогоды – ветра, &hellip;Читать далее О нас\" />\n<meta property=\"og:url\" content=\"https://sfxstudio.ru/about-us/\" />\n<meta property=\"og:site_name\" content=\"SfxStudio.ru\" />\n<meta property=\"article:modified_time\" content=\"2020-11-30T13:21:23+00:00\" />\n<meta property=\"og:image\" content=\"https://sfxstudio.ru/wp-content/uploads/2020/11/LADA-Unreal-championship-count-three-fire.jpg\" />\n\t<meta property=\"og:image:width\" content=\"1280\" />\n\t<meta property=\"og:image:height\" content=\"720\" />\n\t<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/about-us\\/\",\"url\":\"https:\\/\\/sfxstudio.ru\\/about-us\\/\",\"name\":\"О нас - SfxStudio.ru\",\"isPartOf\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/about-us\\/#primaryimage\"},\"image\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/about-us\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/LADA-Unreal-championship-count-three-fire.jpg\",\"datePublished\":\"2019-05-10T00:48:21+00:00\",\"dateModified\":\"2020-11-30T13:21:23+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/sfxstudio.ru\\/about-us\\/#breadcrumb\"},\"inLanguage\":\"ru-RU\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/sfxstudio.ru\\/about-us\\/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/about-us\\/#primaryimage\",\"url\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/LADA-Unreal-championship-count-three-fire.jpg\",\"contentUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/LADA-Unreal-championship-count-three-fire.jpg\",\"width\":1280,\"height\":720},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/sfxstudio.ru\\/about-us\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Главная страница\",\"item\":\"http:\\/\\/sfxstudio.ru\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"О нас\"}]},{\"@type\":\"WebSite\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#website\",\"url\":\"http:\\/\\/sfxstudio.ru\\/\",\"name\":\"SfxStudio.ru\",\"description\":\"Профессиональные спецэффекты на съемочной площадке\",\"publisher\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http:\\/\\/sfxstudio.ru\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"ru-RU\"},{\"@type\":\"Organization\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#organization\",\"name\":\"SfxStudio.ru\",\"url\":\"http:\\/\\/sfxstudio.ru\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"http:\\/\\/sfxstudio.ru\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"contentUrl\":\"https:\\/\\/sfxstudio.ru\\/wp-content\\/uploads\\/2020\\/11\\/logo.png\",\"width\":289,\"height\":180,\"caption\":\"SfxStudio.ru\"},\"image\":{\"@id\":\"http:\\/\\/sfxstudio.ru\\/#\\/schema\\/logo\\/image\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+   "title": "О нас - SfxStudio.ru",
+   "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+   },
+   "canonical": "https://sfxstudio.ru/about-us/",
+   "og_locale": "ru_RU",
+   "og_type": "article",
+   "og_title": "О нас - SfxStudio.ru",
+   "og_description": "Студия спецэффектов SfxStudio.ru приветствует Вас. Наша команда профессионалов обладает огромным опытом и всем необходимым оборудованием для создания максимально реалистичного зимнего окружения как в помещениях, так и на открытом воздухе: Декорирование помещений, отдельных предметов и открытых пространств искусственным снегом. Создание сугробов и снежных наносов; Создание эффекта падающего снега с хлопьями различного объема; Имитация непогоды – ветра, &hellip;Читать далее О нас",
+   "og_url": "https://sfxstudio.ru/about-us/",
+   "og_site_name": "SfxStudio.ru",
+   "article_modified_time": "2020-11-30T13:21:23+00:00",
+   "og_image": [
+    {
+     "width": 1280,
+     "height": 720,
+     "url": "https://sfxstudio.ru/wp-content/uploads/2020/11/LADA-Unreal-championship-count-three-fire.jpg",
+     "type": "image/jpeg"
+    }
+   ],
+   "twitter_card": "summary_large_image",
+   "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "WebPage",
+      "@id": "https://sfxstudio.ru/about-us/",
+      "url": "https://sfxstudio.ru/about-us/",
+      "name": "О нас - SfxStudio.ru",
+      "isPartOf": {
+       "@id": "http://sfxstudio.ru/#website"
+      },
+      "primaryImageOfPage": {
+       "@id": "https://sfxstudio.ru/about-us/#primaryimage"
+      },
+      "image": {
+       "@id": "https://sfxstudio.ru/about-us/#primaryimage"
+      },
+      "thumbnailUrl": "https://sfxstudio.ru/wp-content/uploads/2020/11/LADA-Unreal-championship-count-three-fire.jpg",
+      "datePublished": "2019-05-10T00:48:21+00:00",
+      "dateModified": "2020-11-30T13:21:23+00:00",
+      "breadcrumb": {
+       "@id": "https://sfxstudio.ru/about-us/#breadcrumb"
+      },
+      "inLanguage": "ru-RU",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://sfxstudio.ru/about-us/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "ImageObject",
+      "inLanguage": "ru-RU",
+      "@id": "https://sfxstudio.ru/about-us/#primaryimage",
+      "url": "https://sfxstudio.ru/wp-content/uploads/2020/11/LADA-Unreal-championship-count-three-fire.jpg",
+      "contentUrl": "https://sfxstudio.ru/wp-content/uploads/2020/11/LADA-Unreal-championship-count-three-fire.jpg",
+      "width": 1280,
+      "height": 720
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://sfxstudio.ru/about-us/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная страница",
+        "item": "http://sfxstudio.ru/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "О нас"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "http://sfxstudio.ru/#website",
+      "url": "http://sfxstudio.ru/",
+      "name": "SfxStudio.ru",
+      "description": "Профессиональные спецэффекты на съемочной площадке",
+      "publisher": {
+       "@id": "http://sfxstudio.ru/#organization"
+      },
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "http://sfxstudio.ru/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "ru-RU"
+     },
+     {
+      "@type": "Organization",
+      "@id": "http://sfxstudio.ru/#organization",
+      "name": "SfxStudio.ru",
+      "url": "http://sfxstudio.ru/",
+      "logo": {
+       "@type": "ImageObject",
+       "inLanguage": "ru-RU",
+       "@id": "http://sfxstudio.ru/#/schema/logo/image/",
+       "url": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+       "contentUrl": "https://sfxstudio.ru/wp-content/uploads/2020/11/logo.png",
+       "width": 289,
+       "height": 180,
+       "caption": "SfxStudio.ru"
+      },
+      "image": {
+       "@id": "http://sfxstudio.ru/#/schema/logo/image/"
+      }
+     }
+    ]
+   }
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/2",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/types/page"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/comments?post=2"
+    }
+   ],
+   "version-history": [
+    {
+     "count": 9,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/2/revisions"
+    }
+   ],
+   "predecessor-version": [
+    {
+     "id": 89,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/pages/2/revisions/89"
+    }
+   ],
+   "wp:featuredmedia": [
+    {
+     "embeddable": true,
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/media/39"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sfxstudio.ru/wp-json/wp/v2/media?parent=2"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+]
