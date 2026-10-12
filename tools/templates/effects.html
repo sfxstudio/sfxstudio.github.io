@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta %}
+{% block main %}
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li>Эффекты</li></ol>
+    <h1>Эффекты</h1>
+    <p class="lead">Шесть стихий и декорирование. Внутри каждого раздела — что мы делаем и где это уже было в кадре.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:clamp(2rem,4vw,4rem)">
+  <div class="wrap">
+    <ul class="chapters" style="display:block">
+      {% for e in EFFECTS %}
+      <li class="chapter" style="min-height:0">
+        <div class="statement__grid" style="align-items:center">
+          <a href="/effects/{{ e.key }}/" class="chapter__media" style="display:block" aria-label="{{ e.name }}">
+            <img src="/assets/video/loops/{{ e.key }}.webp" alt="" width="960" height="540" loading="lazy">
+          </a>
+          <div>
+            <span class="cue"><b>EFX-{{ e.num }}</b> · {{ effect_count(e.key) }} {{ plural(effect_count(e.key), 'проект', 'проекта', 'проектов') }}</span>
+            <h2 class="chapter__name" style="margin-top:1rem"><a href="/effects/{{ e.key }}/">{{ e.name }}</a></h2>
+            <p style="margin-top:1rem">{{ e.lead }}</p>
+            <a class="link-arrow" href="/effects/{{ e.key }}/">Открыть раздел <span>→</span></a>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+      <li class="chapter" style="min-height:0">
+        <div class="statement__grid">
+          <div></div>
+          <div>
+            <span class="cue"><b>EFX-07</b> · {{ effect_count('decor') }} {{ plural(effect_count('decor'), 'проект', 'проекта', 'проектов') }}</span>
+            <h2 class="chapter__name" style="margin-top:1rem"><a href="/effects/decor/">Декорирование</a></h2>
+            <p style="margin-top:1rem">{{ DECOR.lead }}</p>
+            <a class="link-arrow" href="/effects/decor/">Открыть раздел <span>→</span></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+{{ cta() }}
+{% endblock %}

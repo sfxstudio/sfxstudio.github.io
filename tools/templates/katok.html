@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta %}
+{% block main %}
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li>Каток</li></ol>
+    <h1>Каток</h1>
+    <p class="lead">Сдаём в аренду каток с пластиковым льдом.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:clamp(2rem,4vw,4rem)">
+  <div class="wrap article">
+    <div>
+      <div class="player" style="aspect-ratio:16/9"><img src="/assets/img/pages/rink-960.webp" width="640" height="360" alt="Каток с пластиковым льдом" fetchpriority="high"></div>
+    </div>
+    <aside class="aside-box">
+      <div class="figure" style="border:0;padding:0"><strong>220<small>м²</small></strong><span class="muted">максимальная площадь пластикового катка</span></div>
+      <p>Размер катка может варьироваться как в длину, так и в ширину.</p>
+      <p class="muted">По вопросам аренды и покупки оборудования обращайтесь к нашим менеджерам любым удобным способом.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem"><a class="btn btn--primary" href="/contacts/#form">Арендовать каток</a><a class="btn" href="{{ PHONE_HREF }}">{{ PHONE }}</a></div>
+    </aside>
+  </div>
+</section>
+<section class="section light" id="snow-sale" aria-labelledby="snow-sale-title">
+  <div class="wrap statement__grid">
+    <div><span class="cue"><b>Снег</b> · Продажа</span></div>
+    <div>
+      <h2 class="h2" id="snow-sale-title">Продажа искусственного снега</h2>
+      <p class="lead" style="margin-top:1.5rem">Студия продаёт искусственный снег. Объём, назначение и условия — по запросу.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem"><a class="btn btn--primary" href="/contacts/#form">Запросить условия</a><a class="btn" href="/effects/snow/">Снег и лёд в кадре</a></div>
+    </div>
+  </div>
+</section>
+{{ cta() }}
+{% endblock %}

@@ -1,0 +1,28 @@
+<form class="form" id="form" data-mail-form action="mailto:{{ EMAIL }}" method="post" enctype="text/plain" novalidate>
+  <div class="form__row">
+    <div class="field">
+      <label for="f-name">Имя</label>
+      <input id="f-name" name="name" autocomplete="name" required aria-describedby="f-name-err">
+      <span class="err" id="f-name-err" aria-live="polite"></span>
+    </div>
+    <div class="field">
+      <label for="f-contact">Телефон или e-mail</label>
+      <input id="f-contact" name="contact" autocomplete="email" inputmode="email" required aria-describedby="f-contact-err">
+      <span class="err" id="f-contact-err" aria-live="polite"></span>
+    </div>
+  </div>
+  <div class="field">
+    <label for="f-when">Даты и место съёмки</label>
+    <input id="f-when" name="when" placeholder="Например: 14–16 ноября, павильон в Москве">
+  </div>
+  <div class="field">
+    <label for="f-task">Какие эффекты нужны</label>
+    <textarea id="f-task" name="task" required aria-describedby="f-task-err" placeholder="Сцены, эффекты, формат проекта, ссылки на референсы"></textarea>
+    <span class="err" id="f-task-err" aria-live="polite"></span>
+  </div>
+  <div class="form__foot">
+    <button class="btn btn--primary" type="submit">Подготовить письмо</button>
+    <p>Кнопка откроет вашу почтовую программу с готовым письмом на {{ EMAIL }} — останется нажать «Отправить». Если почтовой программы нет, напишите или позвоните напрямую.</p>
+    <p class="form__status" role="status" data-form-status hidden></p>
+  </div>
+</form>

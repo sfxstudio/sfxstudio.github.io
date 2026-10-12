@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cta %}
+{% block main %}
+<section class="page-hero">
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li>Шоурил</li></ol>
+    <h1>Шоурил</h1>
+    <p class="lead">Пять минут спецэффектов студии на площадке: снег, огонь, дым, ветер и дождь.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:clamp(2rem,4vw,4rem)">
+  <div class="wrap">
+    <div class="player" style="aspect-ratio:4/3;max-width:1100px">
+      <video controls preload="metadata" playsinline poster="/assets/video/showreel.webp" width="640" height="480">
+        <source src="/assets/video/showreel.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео. <a href="/assets/video/showreel.mp4">Скачать шоурил</a>.
+      </video>
+    </div>
+    <p class="player__note">Видео со звуком. Больше роликов — в <a href="/works/">архиве работ</a> и на <a href="{{ YOUTUBE }}" target="_blank" rel="noopener">YouTube-канале ↗</a>.</p>
+  </div>
+</section>
+{{ cta() }}
+{% endblock %}

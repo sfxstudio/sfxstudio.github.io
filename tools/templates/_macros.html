@@ -1,0 +1,48 @@
+{% macro play_icon() %}<svg viewBox="0 0 14 16" aria-hidden="true"><path d="M0 0l14 8-14 8z" fill="currentColor"/></svg>{% endmacro %}
+
+{% macro picture(item, sizes="(min-width: 800px) 50vw, 100vw", eager=False, cls="") %}
+{% set wh = dims(item) %}
+<img src="{{ img(item, 960) }}" srcset="{{ srcset(item) }}" sizes="{{ sizes }}" width="{{ wh[0] }}" height="{{ wh[1] }}" alt="{{ item.title }} — кадр"{% if not eager %} loading="lazy" decoding="async"{% else %} fetchpriority="high"{% endif %}{% if cls %} class="{{ cls }}"{% endif %}>
+{% endmacro %}
+
+{% macro fx_line(item) %}{{ item.effects or (item.cats | labels | join(', ')) }}{% endmacro %}
+
+{% macro acard(w) %}
+<a class="acard" href="{{ url(w) }}" data-cats="{{ w.cats | join(' ') }}" data-tags="{{ w.tags | map(attribute='slug') | join(' ') }}" data-search="{{ (w.title ~ ' ' ~ w.effects ~ ' ' ~ (w.tags | map(attribute='name') | join(' '))) | lower }}">
+  <div class="acard__img">{{ picture(w, "(min-width: 1000px) 30vw, (min-width: 640px) 50vw, 100vw") }}</div>
+  <div class="acard__top mono muted"><span>{{ w.date[:4] }}</span><span>{{ (w.cats | labels)[:1] | join('') }}</span></div>
+  <h3>{{ w.project }}{% if w.subtitle %}<small>{{ w.subtitle }}</small>{% endif %}</h3>
+  {% if w.effects %}<p>{{ w.effects }}</p>{% endif %}
+</a>
+{% endmacro %}
+
+{% macro player(item) %}
+{% set v = video_info(item) %}
+{% if v %}
+<div class="player" data-player data-type="{{ v.type }}" data-src="{{ v.src }}" data-title="{{ item.title }}">
+  {% if img(item) %}{{ picture(item, "(min-width: 1000px) 66vw, 100vw", eager=True) }}{% endif %}
+  <button class="player__btn" type="button" aria-label="Смотреть видео: {{ item.title }}"><span>{{ play_icon() }} Смотреть</span></button>
+</div>
+<p class="player__note">Источник: {{ v.label }}{% if v.ext %} · <a href="{{ v.ext }}" target="_blank" rel="noopener">открыть отдельно ↗</a>{% endif %}</p>
+{% elif img(item) %}
+<div class="player">{{ picture(item, "(min-width: 1000px) 66vw, 100vw", eager=True) }}</div>
+{% endif %}
+{% endmacro %}
+
+{% macro runs(paragraph) %}{% for t, href in paragraph %}{% if href %}<a href="{{ map_href(href) }}">{{ t }}</a>{% else %}{{ t }}{% endif %}{% if not loop.last %} {% endif %}{% endfor %}{% endmacro %}
+
+{% macro cta(title="Расскажите, что нужно снять", text="Сцены с эффектами, даты и площадка, референсы или раскадровка — этого достаточно, чтобы начать разговор.") %}
+<section class="section raised" aria-labelledby="cta-title">
+  <div class="wrap cta-band">
+    <div>
+      <span class="cue"><b>EFX</b> · Связь</span>
+      <h2 class="h2" id="cta-title" style="margin-top:1.5rem">{{ title }}</h2>
+      <p class="muted measure" style="margin-top:1.5rem">{{ text }}</p>
+    </div>
+    <div class="cta-band__actions">
+      <a class="btn btn--primary" href="/contacts/#form">Обсудить съёмку</a>
+      <a class="btn" href="{{ PHONE_HREF }}">{{ PHONE }}</a>
+    </div>
+  </div>
+</section>
+{% endmacro %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% from "_macros.html" import acard, cta %}
+{% set dark_hero = fx.loop is defined %}
+{% block main %}
+<section class="page-hero{% if fx.loop is defined %} page-hero--media{% endif %}">
+  {% if fx.loop is defined %}
+  <div class="page-hero__bg" aria-hidden="true">
+    <video muted playsinline loop autoplay preload="metadata" poster="/assets/video/loops/{{ fx.loop }}.webp" data-autoplay-motion><source src="/assets/video/loops/{{ fx.loop }}.mp4" type="video/mp4"></video>
+  </div>
+  {% endif %}
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/effects/">Эффекты</a></li><li>{{ fx.name }}</li></ol>
+    <span class="cue" style="margin-top:2rem"><b>EFX-{{ fx.num }}</b> · {{ works | length }} {{ plural(works | length, 'проект', 'проекта', 'проектов') }} в архиве</span>
+    <h1{% if fx.name | length > 14 %} class="is-long"{% endif %}>{{ fx.name }}</h1>
+    <p class="lead">{{ fx.lead }}</p>
+    {% if fx.loop_credit %}<p class="mono muted" style="margin-top:1.5rem">Фон: фрагмент проекта {{ fx.loop_credit }}</p>{% endif %}
+  </div>
+</section>
+<section class="section light">
+  <div class="wrap statement__grid">
+    <div><span class="cue"><b>{{ fx.num }}</b> · Что делаем</span></div>
+    <div>
+      <p class="lead" style="max-width:40ch">{{ fx.text }}</p>
+      <ul class="fx-list" style="margin-top:3rem">
+        {% for x in fx.list %}<li data-n="{{ '%02d' % loop.index }}">{{ x }}</li>{% endfor %}
+      </ul>
+      {% if fx.key == 'snow' %}<p style="margin-top:2rem">Также: <a href="/katok/">аренда катка с пластиковым льдом до 220 м²</a> и продажа искусственного снега.</p>{% endif %}
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem">
+        <a class="btn btn--primary" href="/contacts/#form">Обсудить {{ fx.name | lower }}</a>
+        <a class="btn" href="/works/?cat={{ fx.key }}">Все работы раздела</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% if works %}
+<section class="section" aria-labelledby="fx-works">
+  <div class="wrap">
+    <div class="section-head"><span class="cue"><b>EFX-{{ fx.num }}</b> · Работы</span><h2 class="h2" id="fx-works">{{ fx.name }} в&nbsp;кадре</h2></div>
+    <div class="archive" data-archive data-paged>{% for w in works %}{{ acard(w) }}{% endfor %}</div>
+    <div class="more-wrap" data-more-wrap hidden><button class="btn" type="button" data-more>Показать ещё</button></div>
+  </div>
+</section>
+{% endif %}
+<nav class="section raised" aria-labelledby="other-fx">
+  <div class="wrap">
+    <p class="cue" id="other-fx"><b>Другие стихии</b></p>
+    <div class="chips" style="margin-top:1.25rem">
+      {% for e in EFFECTS + [DECOR] %}{% if e.key != fx.key %}<a href="/effects/{{ e.key }}/">{{ e.name }}</a>{% endif %}{% endfor %}
+    </div>
+  </div>
+</nav>
+{{ cta() }}
+{% endblock %}
