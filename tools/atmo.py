@@ -17,7 +17,7 @@ SRC = ROOT / "assets/img/atmo/src"
 OUT = ROOT / "assets/img/atmo"
 
 # key: blur radius at 1600px (≈ CSS blur in px at that width)
-ITEMS = {"winter": 12, "water": 10, "pyro": 12, "special": 11}
+ITEMS = {"winter": 6, "water": 5, "pyro": 6, "special": 5.5}
 
 
 def main():
