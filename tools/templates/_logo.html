@@ -1,0 +1,8 @@
+{# Shared SFX Studio logo. Source: assets/img/brand/sfx-studio-logo.png (original, untouched);
+   logo-200/400 are the same artwork resized, transparent margins trimmed. Aspect 1407:719. #}
+{% macro logo(cls="", lazy=False) %}
+<picture class="logo{% if cls %} {{ cls }}{% endif %}">
+  <source type="image/webp" srcset="/assets/img/brand/logo-200.webp 200w, /assets/img/brand/logo-400.webp 400w" sizes="(min-width: 1000px) 130px, 100px">
+  <img src="/assets/img/brand/logo-200.png" srcset="/assets/img/brand/logo-200.png 200w, /assets/img/brand/logo-400.png 400w" sizes="(min-width: 1000px) 130px, 100px" width="1407" height="719" alt="SFX Studio" decoding="async"{% if lazy %} loading="lazy"{% endif %}>
+</picture>
+{% endmacro %}

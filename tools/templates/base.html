@@ -1,4 +1,4 @@
-<!doctype html>
+{% from "_logo.html" import logo %}<!doctype html>
 <html lang="ru" class="no-js">
 <head>
 <meta charset="utf-8">
@@ -30,7 +30,7 @@
 <a class="skip" href="#main">К содержанию</a>
 <header class="site-header{% if not dark_hero %} is-solid{% endif %}" data-header{% if dark_hero %} data-transparent{% endif %}>
   <div class="wrap">
-    <a class="brand" href="/" aria-label="SFX Studio — на главную"><img src="/assets/img/brand/logo.png" width="64" height="40" alt="SFX Studio"></a>
+    <a class="brand" href="/" aria-label="SFX Studio — на главную">{{ logo() }}</a>
     <nav class="nav" aria-label="Основное меню">
       <ul>
         <li><a href="/works/"{% if page == 'works' %} aria-current="page"{% endif %}>Работы</a></li>
@@ -70,7 +70,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div class="footer__brand">
-        <img src="/assets/img/brand/logo.png" width="90" height="56" alt="SFX Studio" loading="lazy">
+        {{ logo(lazy=True) }}
         <p>Профессиональные спецэффекты на съёмочной площадке для кино, рекламы и клипов, декорирование зданий, витрин и фотосессий.</p>
       </div>
       <div class="footer__col">
